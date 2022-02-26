@@ -1,0 +1,19 @@
+.header {
+	display: flex;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgb(228, 77, 58);
+}
+
+.input {
+	border-radius: 3px;
+	background-color: rgb(255, 255, 255);
+	width: 280px;
+	padding: 10px;
+
+	font-size: 12px;
+	font-family: "Source Sans Pro";
+	color: rgb(178, 178, 178);
+	line-height: 1.667;
+}
