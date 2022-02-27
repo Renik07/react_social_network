@@ -1,9 +1,13 @@
 .header {
+	background-color: rgb(228, 77, 58);
+}
+
+.container {
 	display: flex;
 	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: rgb(228, 77, 58);
+	max-width: 1170px;
+	padding: 10px 20px;
+	margin: 0 auto;
 }
 
 .input {
