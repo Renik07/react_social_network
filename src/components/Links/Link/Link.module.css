@@ -3,6 +3,8 @@
 	text-decoration: none;
 	color: #fff;
 }
-.link .active {
+.active {
+	color: #fff;
+	text-align: center;
 	text-decoration: underline;
 }
