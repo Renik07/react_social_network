@@ -14,7 +14,7 @@ const App = () => {
 				<div className={style.container}>
 					<Routes>
 						<Route path='/home' element={<Home />} />
-						<Route path='/messages' element={<Messages />} />
+						<Route path='/messages/*' element={<Messages />} />
 					</Routes>
 
 				</div>
