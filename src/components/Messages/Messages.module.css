@@ -14,12 +14,39 @@
 .messagesTop {
 	grid-area: messages-top;
 	border: 1px solid #f2f2f2;
+	display: flex;
+	align-items: center;
+	padding-left: 25px;
+	font-size: 17px;
+	font-weight: bold;
 
 }
 
 .dialogsTop {
 	grid-area: dialogs-top;
 	border: 1px solid #f2f2f2;
+	display: flex;
+	align-items: center;
+	padding-left: 25px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+
+.titleName {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.onlineStatus {
+	font-size: 14px;
+	color: rgb(104, 104, 104);
 }
 
 .dialogs {
@@ -40,7 +67,36 @@
 	
 }
 
-.dialogsBottom {
+.send {
 	grid-area: dialogs-bottom;
 	border: 1px solid #f2f2f2;
+	background: #f3f5f7;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px;
+	gap: 20px;
+}
+
+.wrapper {
+
+}
+
+.input {
+	flex: 0 1 640px;
+	border-radius: 3px;
+	font-size: 16px;
+	color: rgb(178, 178, 178);
+	padding: 15px;
+	border: none;
+}
+
+.button {
+	border-radius: 3px;
+	background-color: rgb(228, 77, 58);
+	padding: 15px 40px;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
 }

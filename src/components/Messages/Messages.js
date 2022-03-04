@@ -22,7 +22,17 @@ const Messages = () => {
 	return (
 		<div className={style.container}>
 			<div className={style.messagesTop}>Messages</div>
-			<div className={style.dialogsTop}>John Doe</div>
+			<div className={style.dialogsTop}>
+				<img className={style.img} src="./images/icon-user1.jpg" alt="avatar user 1" />
+				<div>
+					<div className={style.titleName}>
+						John Doe
+					</div>
+					<div className={style.onlineStatus}>
+					Online
+					</div>
+				</div>
+			</div>
 			<div className={style.dialogs}>
 				<DialogItem name="Name 1" id="user1" />
 				<DialogItem name="Name 2" id="user2" />
@@ -35,7 +45,10 @@ const Messages = () => {
 				<MessageItem message="message 3" />
 				<MessageItem message="message 4" />
 			</div>
-			<div className={style.dialogsBottom}>Type a message here</div>
+			<div className={style.send}>
+					<input className={style.input} type="text" placeholder="Type a message here" />
+					<button className={style.button}>Send</button>	
+			</div>
 		</div>
 	)
 }
