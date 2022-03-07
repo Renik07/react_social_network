@@ -19,6 +19,25 @@ const MessageItem = (props) => {
 
 
 const Messages = () => {
+
+	let dialogsData = [
+		{id: "user1", name: "Name 1"},
+		{id: "user2", name: "Name 2"},
+		{id: "user3", name: "Name 3"},
+		{id: "user4", name: "Name 4"}
+	];
+
+	let dialog = dialogsData.map(d => <DialogItem id={d.id} name={d.name} />);
+
+	let messagesData = [
+		{id: 1, message: "message 1"},
+		{id: 2, message: "message 2"},
+		{id: 3, message: "message 3"},
+		{id: 4, message: "message 4"}
+	]
+
+	let message = messagesData.map(m => <MessageItem message={m.message} />);
+
 	return (
 		<div className={style.container}>
 			<div className={style.messagesTop}>Messages</div>
@@ -34,16 +53,10 @@ const Messages = () => {
 				</div>
 			</div>
 			<div className={style.dialogs}>
-				<DialogItem name="Name 1" id="user1" />
-				<DialogItem name="Name 2" id="user2" />
-				<DialogItem name="Name 3" id="user3" />
-				<DialogItem name="Name 4" id="user4" />
+				{ dialog }
 			</div>
 			<div className={style.messages}>
-				<MessageItem message="message 1" />
-				<MessageItem message="message 2" />
-				<MessageItem message="message 3" />
-				<MessageItem message="message 4" />
+				{ message }
 			</div>
 			<div className={style.send}>
 					<input className={style.input} type="text" placeholder="Type a message here" />
