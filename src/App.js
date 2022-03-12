@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Messages from './components/Messages/Messages';
 
-const App = () => {
+const App = (props) => {
   return (
 		<BrowserRouter>
 			<div className={style.app}>
@@ -14,7 +14,7 @@ const App = () => {
 				<div className={style.container}>
 					<Routes>
 						<Route path='/home' element={<Home />} />
-						<Route path='/messages/*' element={<Messages />} />
+						<Route path='/messages/*' element={ <Messages dataD = {props.dataD} dataM = {props.dataM} />} />
 					</Routes>
 
 				</div>

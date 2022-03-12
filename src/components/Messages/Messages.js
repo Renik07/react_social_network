@@ -3,25 +3,11 @@ import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
 
 
-const Messages = () => {
+const Messages = (props) => {
 
-	let dialogsData = [
-		{id: "user1", name: "Name 1"},
-		{id: "user2", name: "Name 2"},
-		{id: "user3", name: "Name 3"},
-		{id: "user4", name: "Name 4"}
-	];
+	let dialog = props.dataD.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let dialog = dialogsData.map(d => <DialogItem id={d.id} name={d.name} />);
-
-	let messagesData = [
-		{id: 1, message: "message 1"},
-		{id: 2, message: "message 2"},
-		{id: 3, message: "message 3"},
-		{id: 4, message: "message 4"}
-	]
-
-	let message = messagesData.map(m => <MessageItem message={m.message} />);
+	let message = props.dataM.map(m => <MessageItem key={m.id} message={m.message} />);
 
 	return (
 		<div className={style.container}>
