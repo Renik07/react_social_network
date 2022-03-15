@@ -5,9 +5,9 @@ import style from "./Messages.module.css";
 
 const Messages = (props) => {
 
-	let dialog = props.dataD.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
+	let dialog = props.state.messagesPage.dialogsData.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let message = props.dataM.map(m => <MessageItem key={m.id} message={m.message} />);
+	let message = props.state.messagesPage.messagesData.map(m => <MessageItem key={m.id} message={m.message} />);
 
 	return (
 		<div className={style.container}>
@@ -24,7 +24,7 @@ const Messages = (props) => {
 				</div>
 			</div>
 			<div className={style.dialogs}>
-				{ dialog }
+				 { dialog }
 			</div>
 			<div className={style.messages}>
 				{ message }

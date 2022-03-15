@@ -14,7 +14,7 @@ const App = (props) => {
 				<div className={style.container}>
 					<Routes>
 						<Route path='/home' element={<Home />} />
-						<Route path='/messages/*' element={ <Messages dataD = {props.dataD} dataM = {props.dataM} />} />
+						<Route path='/messages/*' element={ <Messages state = {props.state} /* dataM = {props.dataM} */ />} />
 					</Routes>
 
 				</div>
