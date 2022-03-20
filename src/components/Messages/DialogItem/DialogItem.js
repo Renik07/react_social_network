@@ -5,7 +5,8 @@ const DialogItem = (props) => {
 	const id = `/messages/${props.id}`;
 	return (
 		<div className={style.dialog}>
-			<NavLink to={id} className={style.dialog}>{props.name}</NavLink>
+			<div className={style.avatar}></div>
+			<NavLink to={id} className={style.link}>{props.name}</NavLink>
 		</div>
 	)
 }
