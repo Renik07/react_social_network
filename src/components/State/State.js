@@ -1,3 +1,5 @@
+import { rerenderTree } from "../../render";
+
 let state = {
 	messagesPage: {
 		dialogsData: [
@@ -15,6 +17,13 @@ let state = {
 			{id: 3, message: "message 3"},
 			{id: 4, message: "message 4"}
 		]
+	},
+	homePage: {
+		socialData: [
+			{id: "link1", link: "http://www.example.com"},
+			{id: "link2", link: "http://www.facebook.com"},
+			{id: "link3", link: "http://www.twitter.com"}
+		]
 	}
 }
 
@@ -23,6 +32,8 @@ export let addMsg = (msg) => {
 		id: 5, message: msg
 	}
 	state.messagesPage.messagesData.push(newMsg);
+
+	rerenderTree();
 }
 
 export default state;

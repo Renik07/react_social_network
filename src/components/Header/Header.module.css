@@ -10,14 +10,19 @@
 	margin: 0 auto;
 }
 
+.img {
+	margin-right: 20px;
+}
+
 .input {
+	border: none;
 	border-radius: 3px;
 	background-color: rgb(255, 255, 255);
+	color: #000000;
 	width: 280px;
 	padding: 10px;
-
-	font-size: 12px;
+	outline: none;
+	font-size: 16px;
 	font-family: "Source Sans Pro";
-	color: rgb(178, 178, 178);
 	line-height: 1.667;
 }
