@@ -1,13 +1,19 @@
-import { rerenderTree } from './render';
-import state from './components/State/State';
+import state, { subscribe } from './components/State/State';
 /* import reportWebVitals from './reportWebVitals'; */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { addMsg, updateTextMsg } from './components/State/State';
+import './index.css';
 
-
+let rerenderTree = (state) => {
+	ReactDOM.render(
+  <React.StrictMode>
+    <App state={state} addMsg={addMsg} updateTextMsg={updateTextMsg} />
+  </React.StrictMode>, document.getElementById('root')
+	);
+}
 
 rerenderTree(state);
 
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-/* reportWebVitals(); */
+subscribe(rerenderTree);

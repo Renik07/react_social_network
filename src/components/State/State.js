@@ -1,4 +1,4 @@
-import { rerenderTree } from "../../render";
+let rerenderTree;
 
 let state = {
 	messagesPage: {
@@ -28,7 +28,7 @@ let state = {
 	}
 }
 
-export let addMsg = () => {
+export const addMsg = () => {
 	let newMsg = {
 		id: 5, message: state.messagesPage.newTextMessage
 	}
@@ -36,9 +36,13 @@ export let addMsg = () => {
 	state.messagesPage.newTextMessage = "";
 	rerenderTree(state);
 }
-export let updateTextMsg = (text) => {
+export const updateTextMsg = (text) => {
 	state.messagesPage.newTextMessage = text;
 	rerenderTree(state);
+}
+
+export const subscribe = (observer) => {
+	rerenderTree = observer;
 }
 
 export default state;
