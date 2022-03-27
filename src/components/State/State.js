@@ -16,24 +16,29 @@ let state = {
 			{id: 2, message: "message 2"},
 			{id: 3, message: "message 3"},
 			{id: 4, message: "message 4"}
-		]
+		],
+		newTextMessage: "qwerty"
 	},
 	homePage: {
 		socialData: [
-			{id: "link1", link: "http://www.example.com"},
-			{id: "link2", link: "http://www.facebook.com"},
-			{id: "link3", link: "http://www.twitter.com"}
+			{id: "link1", link: "codewars.com/users/Renik07"},
+			{id: "link2", link: "github.com/Renik07"},
+			{id: "link3", link: "linkedin.com/in/renat-gayazutdinov-07344a65/"}
 		]
 	}
 }
 
-export let addMsg = (msg) => {
+export let addMsg = () => {
 	let newMsg = {
-		id: 5, message: msg
+		id: 5, message: state.messagesPage.newTextMessage
 	}
 	state.messagesPage.messagesData.push(newMsg);
-
-	rerenderTree();
+	state.messagesPage.newTextMessage = "";
+	rerenderTree(state);
+}
+export let updateTextMsg = (text) => {
+	state.messagesPage.newTextMessage = text;
+	rerenderTree(state);
 }
 
 export default state;

@@ -1,10 +1,10 @@
-import './index.css';
 import { rerenderTree } from './render';
+import state from './components/State/State';
 /* import reportWebVitals from './reportWebVitals'; */
 
 
 
-rerenderTree();
+rerenderTree(state);
 
 
 // If you want to start measuring performance in your app, pass a function

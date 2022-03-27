@@ -6,14 +6,19 @@ import style from "./Messages.module.css";
 
 const Messages = (props) => {
 
-	let dialog = props.state.messagesPage.dialogsData.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
+	let dialog = props.state.dialogsData.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let message = props.state.messagesPage.messagesData.map(m => <MessageItem key={m.id} message={m.message} />);
+	let message = props.state.messagesData.map(m => <MessageItem key={m.id} message={m.message} />);
 
 	let newMessage = React.createRef();
 
 	let addMessage = () => {
-		props.addMsg(newMessage.current.value);
+		props.addMsg();
+	}
+
+	let onNewMessage = () => {
+		let text = newMessage.current.value;
+		props.updateTextMsg(text);
 	}
 
 	return (
@@ -37,7 +42,7 @@ const Messages = (props) => {
 				{ message }
 			</div>
 			<div className={style.send}>
-					<input ref={ newMessage } className={style.input} type="text" placeholder="Type a message here" />
+					<input onChange={onNewMessage} ref={ newMessage } className={style.input} type="text" value={props.state.newTextMessage} placeholder="Type a message here" />
 					<button className={style.button} onClick={ addMessage }>Send</button>	
 			</div>
 		</div>

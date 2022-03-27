@@ -11,7 +11,12 @@ const Home = (props) => {
 				<Follow />
 				{<SocialLinks state = {props.state} />}
 			</div>
-			<div className={style.column2}></div>
+			<div className={style.column2}>
+				<div className={style.user}>
+					<h2 className={style.name}>Renat G.</h2>
+					<h3 className={style.profession}>Frontend developer (React developer)</h3>
+				</div>
+			</div>
 			<div className={style.column3}>
 				<Friends />
 			</div>
