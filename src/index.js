@@ -1,19 +1,18 @@
-import state, { subscribe } from './components/State/State';
+import store from './components/State/State';
 /* import reportWebVitals from './reportWebVitals'; */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { addMsg, updateTextMsg } from './components/State/State';
 import './index.css';
 
 let rerenderTree = (state) => {
 	ReactDOM.render(
   <React.StrictMode>
-    <App state={state} addMsg={addMsg} updateTextMsg={updateTextMsg} />
+    <App state={state} addMsg={store.addMsg.bind(store)} updateTextMsg={store.updateTextMsg.bind(store)} />
   </React.StrictMode>, document.getElementById('root')
 	);
 }
 
-rerenderTree(state);
+rerenderTree(store.getState());
 
-subscribe(rerenderTree);
+store.subscribe(rerenderTree);
