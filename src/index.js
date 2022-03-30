@@ -8,7 +8,7 @@ import './index.css';
 let rerenderTree = (state) => {
 	ReactDOM.render(
   <React.StrictMode>
-    <App state={state} addMsg={store.addMsg.bind(store)} updateTextMsg={store.updateTextMsg.bind(store)} />
+    <App state={state} dispatch={store.dispatch.bind(store)} />
   </React.StrictMode>, document.getElementById('root')
 	);
 }

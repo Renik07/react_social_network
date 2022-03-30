@@ -16,8 +16,7 @@ const App = (props) => {
 						<Route path='/home' element={<Home state = {props.state.homePage}/>} />
 						<Route path='/messages/*' element={ <Messages 
 							state = {props.state.messagesPage} 
-							addMsg={props.addMsg}
-							updateTextMsg={props.updateTextMsg} />} />
+							dispatch={props.dispatch} />} />
 					</Routes>
 
 				</div>
