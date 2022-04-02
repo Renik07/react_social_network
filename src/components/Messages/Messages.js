@@ -1,4 +1,5 @@
 import React from 'react';
+import { addMessageActionCreator, onNewMessageActionCreator } from '../State/State';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
@@ -13,12 +14,12 @@ const Messages = (props) => {
 	let newMessage = React.createRef();
 
 	let addMessage = () => {
-		props.dispatch({type: "ADD-MESSAGE"});
+		props.dispatch(addMessageActionCreator());
 	}
 
 	let onNewMessage = () => {
 		let text = newMessage.current.value;
-		props.dispatch({type: "UPDATE-TEXT-MESSAGE", text: text});
+		props.dispatch(onNewMessageActionCreator(text));
 	}
 
 	return (
