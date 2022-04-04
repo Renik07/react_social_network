@@ -1,5 +1,5 @@
 import React from 'react';
-import { addMessageActionCreator, onNewMessageActionCreator } from '../State/State';
+import { addMessageActionCreator, onNewMessageActionCreator } from '../State/messagesReducer';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";

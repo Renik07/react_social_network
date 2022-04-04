@@ -1,5 +1,4 @@
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE";
+import messagesReducer from "./messagesReducer";
 
 let store = {
 	_state: {
@@ -39,29 +38,8 @@ let store = {
 		this._callSubscriber = observer;
 	},
 	dispatch(action) {
-		if (action.type === ADD_MESSAGE) {
-			let newMsg = {
-				id: 5, message: this._state.messagesPage.newTextMessage
-			}
-			this._state.messagesPage.messagesData.push(newMsg);
-			this._state.messagesPage.newTextMessage = "";
-			this._callSubscriber(this._state);
-		} else if (action.type === UPDATE_TEXT_MESSAGE) {
-			this._state.messagesPage.newTextMessage = action.text;
-			this._callSubscriber(this._state);
-		}
-	}
-}
-
-export const addMessageActionCreator = () => {
-	return {
-		type: ADD_MESSAGE
-	}
-}
-
-export const onNewMessageActionCreator = (text) => {
-	return {
-		type: UPDATE_TEXT_MESSAGE, text: text
+		this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+		this._callSubscriber(this._state, action);
 	}
 }
 
