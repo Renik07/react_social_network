@@ -1,4 +1,4 @@
-import store from './components/State/State';
+import store from './components/State/redux-store';
 /* import reportWebVitals from './reportWebVitals'; */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -15,4 +15,7 @@ let rerenderTree = (state) => {
 
 rerenderTree(store.getState());
 
-store.subscribe(rerenderTree);
+store.subscribe(() => {
+	let state = store.getState();
+	rerenderTree(state);
+});
