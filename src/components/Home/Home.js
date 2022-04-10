@@ -4,12 +4,11 @@ import style from "./Home.module.css";
 import SocialLinks from "./SocialLinks/SocialLinks";
 
 const Home = (props) => {
-	
 	return(
 		<div className={style.container}>
 			<div className={style.column1}>
 				<Follow />
-				{<SocialLinks state = {props.state} />}
+				{<SocialLinks social = {props.homePage.homePage} />}
 			</div>
 			<div className={style.column2}>
 				<div className={style.user}>

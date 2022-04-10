@@ -3,7 +3,7 @@ import style from './App.module.css';
 import Background from './components/Background/Background';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Messages from './components/Messages/Messages';
+import MessagesContainer from './components/Messages/MessagesContainer';
 
 const App = (props) => {
   return (
@@ -13,10 +13,8 @@ const App = (props) => {
 				<Background />
 				<div className={style.container}>
 					<Routes>
-						<Route path='/home' element={<Home state = {props.state.homePage}/>} />
-						<Route path='/messages/*' element={ <Messages 
-							state = {props.state.messagesPage} 
-							dispatch={props.dispatch} />} />
+						<Route path='/home' element={<Home homePage = {props.state.homePage}/>} />
+						<Route path='/messages/*' element={ <MessagesContainer store = {props.store} />} />
 					</Routes>
 
 				</div>

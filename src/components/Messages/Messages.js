@@ -1,5 +1,4 @@
 import React from 'react';
-import { addMessageActionCreator, onNewMessageActionCreator } from '../State/messagesReducer';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
@@ -7,19 +6,19 @@ import style from "./Messages.module.css";
 
 const Messages = (props) => {
 
-	let dialog = props.state.dialogsData.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
+	let dialog = props.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let message = props.state.messagesData.map(m => <MessageItem key={m.id} message={m.message} />);
+	let message = props.messages.map(m => <MessageItem key={m.id} message={m.message} />);
 
 	let newMessage = React.createRef();
 
-	let addMessage = () => {
-		props.dispatch(addMessageActionCreator());
+	let onAddMessage = () => {
+		props.addMessage();
 	}
 
 	let onNewMessage = () => {
 		let text = newMessage.current.value;
-		props.dispatch(onNewMessageActionCreator(text));
+		props.updateNewMessage(text);
 	}
 
 	return (
@@ -43,8 +42,8 @@ const Messages = (props) => {
 				{ message }
 			</div>
 			<div className={style.send}>
-					<input onChange={onNewMessage} ref={ newMessage } className={style.input} type="text" value={props.state.newTextMessage} placeholder="Type a message here" />
-					<button className={style.button} onClick={ addMessage }>Send</button>	
+					<input onChange={onNewMessage} ref={ newMessage } className={style.input} type="text" value={props.newTextMessage} placeholder="Type a message here" />
+					<button className={style.button} onClick={ onAddMessage }>Send</button>	
 			</div>
 		</div>
 	)
