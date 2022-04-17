@@ -1,9 +1,10 @@
-import StoreContext from '../../StoreContext';
+import { connect } from 'react-redux';
+/* import StoreContext from '../../StoreContext'; */
 import { addMessageActionCreator, onNewMessageActionCreator } from '../State/messagesReducer';
 import Messages from './Messages';
 
 
-const MessagesContainer = () => {
+/* const MessagesContainer = () => {
 	return (
 		<StoreContext.Consumer> 
 			{ 
@@ -28,6 +29,23 @@ const MessagesContainer = () => {
 			}
 		</StoreContext.Consumer>
 	)
+} */
+
+let mapStateToProps = (state) => {
+	return {
+		dialogs: state.messagesPage.dialogsData,
+		messages: state.messagesPage.messagesData,
+		newTextMessage: state.messagesPage.newTextMessage
+	}
 }
+
+let mapDispatchToProps = (dispatch) => {
+	return {
+		updateNewMessage: () => {dispatch(addMessageActionCreator());},
+		addMessage: (text) => {dispatch(onNewMessageActionCreator(text));}
+	}
+}
+
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
 
 export default MessagesContainer;

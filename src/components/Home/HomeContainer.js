@@ -1,8 +1,9 @@
-import StoreContext from '../../StoreContext';
+import { connect } from 'react-redux';
+/* import StoreContext from '../../StoreContext'; */
 import Home from './Home';
 
 
-const HomeContainer = () => {
+/* const HomeContainer = () => {
 	return (
 		<StoreContext.Consumer> 
 			{ 
@@ -16,6 +17,20 @@ const HomeContainer = () => {
 			}
 		</StoreContext.Consumer>
 	)
+} */
+
+let mapStateToProps = (state) => {
+	return {
+		homePage: state.homePage
+	}
 }
+
+let mapDispatchToProps = (dispatch) => {
+	return {
+
+	}
+}
+
+let HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home);
 
 export default HomeContainer;
