@@ -13,6 +13,7 @@ const Messages = (props) => {
 	let newMessage = React.createRef();
 
 	let onAddMessage = () => {
+		console.log(props.newTextMessage);
 		props.addMessage();
 	}
 

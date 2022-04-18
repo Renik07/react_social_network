@@ -17,21 +17,27 @@ let initialState = {
 		{id: 3, message: "message 3"},
 		{id: 4, message: "message 4"}
 	],
-	newTextMessage: "qwerty"
+	newTextMessage: ""
 }
 
 const messagesReducer = (state = initialState, action) => {
+	let stateCopy = {...state};
+
+	debugger;
 	if (action.type === ADD_MESSAGE) {
+		/* let stateCopy = {...state}; */
 		let newMsg = {
 			id: 5, message: state.newTextMessage
 		}
-		state.messagesData.push(newMsg);
-		state.newTextMessage = "";
+		stateCopy.messagesData = [...state.messagesData];
+		stateCopy.messagesData.push(newMsg);
+		stateCopy.newTextMessage = "";
 	} else if (action.type === UPDATE_TEXT_MESSAGE) {
-		state.newTextMessage = action.text;
+		/* let stateCopy = {...state}; */
+		stateCopy.newTextMessage = action.text;
 	}
 
-	return state;
+	return stateCopy;
 }
 
 export const addMessageActionCreator = () => {
