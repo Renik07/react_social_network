@@ -2,6 +2,7 @@ const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE";
 
 let initialState = {
+	
 	dialogsData: [
 		{id: "user1", name: "Name 1"},
 		{id: "user2", name: "Name 2"},
@@ -11,7 +12,7 @@ let initialState = {
 		{id: "user6", name: "Name 6"},
 		{id: "user7", name: "Name 7"}
 	],
-	messagesData: [
+		messagesData: [
 		{id: 1, message: "message 1"},
 		{id: 2, message: "message 2"},
 		{id: 3, message: "message 3"},
@@ -21,23 +22,23 @@ let initialState = {
 }
 
 const messagesReducer = (state = initialState, action) => {
-	let stateCopy = {...state};
 
-	debugger;
 	if (action.type === ADD_MESSAGE) {
-		/* let stateCopy = {...state}; */
 		let newMsg = {
 			id: 5, message: state.newTextMessage
 		}
-		stateCopy.messagesData = [...state.messagesData];
-		stateCopy.messagesData.push(newMsg);
-		stateCopy.newTextMessage = "";
+		return {
+			...state,
+			messagesData: [...state.messagesData, newMsg],
+			newTextMessage: ""
+		}
 	} else if (action.type === UPDATE_TEXT_MESSAGE) {
-		/* let stateCopy = {...state}; */
-		stateCopy.newTextMessage = action.text;
+		return {
+			...state,
+			newTextMessage: action.text
+		}
 	}
-
-	return stateCopy;
+	return state;
 }
 
 export const addMessageActionCreator = () => {
