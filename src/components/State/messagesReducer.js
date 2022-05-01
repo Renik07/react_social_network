@@ -22,25 +22,28 @@ let initialState = {
 }
 
 const messagesReducer = (state = initialState, action) => {
-
-	if (action.type === ADD_MESSAGE) {
-		let newMsg = {
-			id: 5, message: state.newTextMessage
-		}
-		return {
-			...state,
-			messagesData: [...state.messagesData, newMsg],
-			newTextMessage: ""
-		}
-	} else if (action.type === UPDATE_TEXT_MESSAGE) {
-		return {
-			...state,
-			newTextMessage: action.text
-		}
+	switch (action.type) {
+		case ADD_MESSAGE:
+			let newMsg = {
+				id: 5, message: state.newTextMessage
+			}
+			return {
+				...state,
+				messagesData: [...state.messagesData, newMsg],
+				newTextMessage: ""
+			}
+		case UPDATE_TEXT_MESSAGE:
+			return {
+				...state,
+				newTextMessage: action.text
+			}
+	
+		default:
+			return state;
 	}
-	return state;
 }
 
+// создаем action для дальнейшего dispatch'a в MessagesContainer
 export const addMessageActionCreator = () => {
 	return {
 		type: ADD_MESSAGE
@@ -49,7 +52,8 @@ export const addMessageActionCreator = () => {
 
 export const onNewMessageActionCreator = (text) => {
 	return {
-		type: UPDATE_TEXT_MESSAGE, text: text
+		type: UPDATE_TEXT_MESSAGE, 
+		text: text
 	}
 }
 

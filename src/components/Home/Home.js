@@ -8,7 +8,7 @@ const Home = (props) => {
 		<div className={style.container}>
 			<div className={style.column1}>
 				<Follow />
-				{<SocialLinks social = {props.homePage.homePage} />}
+				<SocialLinks social = {props.homePage.homePage} />
 			</div>
 			<div className={style.column2}>
 				<div className={style.user}>
