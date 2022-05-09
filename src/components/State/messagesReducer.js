@@ -43,7 +43,7 @@ const messagesReducer = (state = initialState, action) => {
 	}
 }
 
-// создаем action для дальнейшего dispatch'a в MessagesContainer
+// создаем action для дальнейшего dispatch'a в MessagesContainer'е
 export const addMessageActionCreator = () => {
 	return {
 		type: ADD_MESSAGE

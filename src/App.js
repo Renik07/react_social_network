@@ -4,6 +4,8 @@ import Background from './components/Background/Background';
 import Header from './components/Header/Header';
 import HomeContainer from './components/Home/HomeContainer';
 import MessagesContainer from './components/Messages/MessagesContainer';
+import Profiles from './components/Profiles/Profiles';
+import ProfilesContainer from './components/Profiles/ProfilesContainer';
 
 const App = (props) => {
   return (
@@ -14,6 +16,7 @@ const App = (props) => {
 					<Routes>
 						<Route path='/home' element={<HomeContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
+						<Route path='/profiles' element={ <ProfilesContainer />} />
 					</Routes>
 				</div>
 			</div>
