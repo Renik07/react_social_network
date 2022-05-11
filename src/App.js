@@ -4,8 +4,7 @@ import Background from './components/Background/Background';
 import Header from './components/Header/Header';
 import HomeContainer from './components/Home/HomeContainer';
 import MessagesContainer from './components/Messages/MessagesContainer';
-import Profiles from './components/Profiles/Profiles';
-import ProfilesContainer from './components/Profiles/ProfilesContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   return (
@@ -16,7 +15,7 @@ const App = (props) => {
 					<Routes>
 						<Route path='/home' element={<HomeContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
-						<Route path='/profiles' element={ <ProfilesContainer />} />
+						<Route path='/profiles' element={ <UsersContainer />} />
 					</Routes>
 				</div>
 			</div>

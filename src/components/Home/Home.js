@@ -4,6 +4,7 @@ import style from "./Home.module.css";
 import SocialLinks from "./SocialLinks/SocialLinks";
 
 const Home = (props) => {
+
 	return(
 		<div className={style.container}>
 			<div className={style.column1}>
