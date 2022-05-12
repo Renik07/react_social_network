@@ -1,6 +1,5 @@
 import style from "./Follow.module.css";
 
-
 const Follow = () => {
 	return(
 		<div className={style.follow}>
