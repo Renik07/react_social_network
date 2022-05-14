@@ -6,13 +6,45 @@ import userAvatar from '../../assets/images/avatar.png';
 class Users extends React.Component {
 	componentDidMount() {
 		axios
-			.get('https://social-network.samuraijs.com/api/1.0/users')
+			.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+			.then(response => {
+				this.props.setUsers(response.data.items);
+				this.props.setTotalUsersCount(response.data.totalCount);
+			})
+	}
+
+	onPageChanged(pageNumber) {
+		this.props.setCurrentPage(pageNumber)
+
+		axios
+		.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
 			.then(response => this.props.setUsers(response.data.items))
 	}
+
 	render() {
+
+		let pages = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+		let arrPages = [];
+
+		for (let i = 1; i <= pages; i++) {
+			arrPages.push(i);
+		}
+
+		let curP = this.props.currentPage;
+		let curPF = ((curP - 5) < 0) ?  0  : curP - 5 ;
+		let curPL = curP + 4;
+		let slicedPages = arrPages.slice( curPF, curPL);
+
 		return (
 			<div className={style.container}>
 				<h2 className={style.title}>Profiles</h2>
+				<div>
+					{ slicedPages.map(p => {
+						return (
+							<span className={this.props.currentPage === p ? style.selectedPage : style.buttonPage} onClick={ () => {this.onPageChanged(p)} }>{ p } </span>
+						)
+					}) }
+				</div>
 				<div className={style.wrapper}>
 					{ 
 						this.props.users.map(user => <div className={style.userWrapper} key={user.id}>				
@@ -27,7 +59,6 @@ class Users extends React.Component {
 						) 
 					}
 				</div>
-				{/* <button className={style.buttonGetUsers} onClick={getUsers}>...</button> */}
 			</div>
 		)
 	}
