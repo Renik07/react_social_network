@@ -44,17 +44,8 @@ const messagesReducer = (state = initialState, action) => {
 }
 
 // создаем action для дальнейшего dispatch'a в MessagesContainer'е
-export const addMessageActionCreator = () => {
-	return {
-		type: ADD_MESSAGE
-	}
-}
+export const addMessage = () => ({type: ADD_MESSAGE});
 
-export const onNewMessageActionCreator = (text) => {
-	return {
-		type: UPDATE_TEXT_MESSAGE, 
-		text: text
-	}
-}
+export const updateNewMessage = (text) => ({type: UPDATE_TEXT_MESSAGE, text});
 
 export default messagesReducer;

@@ -7,12 +7,6 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-
-	}
-}
-
-let HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home);
+let HomeContainer = connect(mapStateToProps, {})(Home);
 
 export default HomeContainer;

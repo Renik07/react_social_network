@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addMessageActionCreator, onNewMessageActionCreator } from '../State/messagesReducer';
+import { updateNewMessage, addMessage } from '../State/messagesReducer';
 import Messages from './Messages';
 
 let mapStateToProps = (state) => {
@@ -10,13 +10,6 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		updateNewMessage: (text) => {dispatch(onNewMessageActionCreator(text));},
-		addMessage: () => {dispatch(addMessageActionCreator());}
-	}
-}
-
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
+const MessagesContainer = connect(mapStateToProps, {updateNewMessage, addMessage})(Messages);
 
 export default MessagesContainer;
