@@ -1,5 +1,5 @@
 let initialState = {
-	myProfile: {
+	userProfile: {
 		socialData: [
 			{id: "link1", link: "codewars.com/users/Renik07"},
 			{id: "link2", link: "github.com/Renik07"},
@@ -8,9 +8,9 @@ let initialState = {
 	}
 }
 
-const MyProfileReducer = (state = initialState, action) => {
+const UserProfileReducer = (state = initialState, action) => {
 
 	return state;
 }
 
-export default MyProfileReducer;
+export default UserProfileReducer;

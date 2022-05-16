@@ -1,0 +1,43 @@
+.follow {
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	padding: 0px 30px;
+	margin-bottom: 30px;
+}
+
+.followCount {
+	display: flex;
+	justify-content: space-between;
+}
+
+.followingBlock {
+	text-align: center;
+}
+
+.followingTitle {
+	font-size: 20px;
+	font-family: "Source Sans Pro";
+	color: rgb(104, 104, 104);
+}
+
+.followingNum {
+	font-size: 20px;
+	font-family: "Source Sans Pro";
+	color: rgb(0, 0, 0);
+}
+
+.followersBlock {
+	text-align: center;
+}
+
+.followersTitle {
+	font-size: 20px;
+	font-family: "Source Sans Pro";
+	color: rgb(104, 104, 104);
+}
+
+.followersNum {
+	font-size: 20px;
+	font-family: "Source Sans Pro";
+	color: rgb(0, 0, 0);
+}

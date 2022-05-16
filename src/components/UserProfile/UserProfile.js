@@ -1,15 +1,24 @@
 import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
-import style from "./MyProfile.module.css";
+import style from "./UserProfile.module.css";
 import SocialLinks from "./SocialLinks/SocialLinks";
 
-const MyProfile = (props) => {
+const UserProfile = (props) => {
 
 	return(
 		<div className={style.container}>
 			<div className={style.column1}>
-				<Follow />
-				<SocialLinks social = {props.myProfilePage.myProfile} />
+				<div className={style.column1Wrapper}>
+					<div className={style.userImg}>
+						<img src="" alt=""/>
+					</div>
+					<div className={style.buttonsWrapper}>
+						<button className={style.buttonFollow}>Follow</button>
+						<button className={style.buttonMessage}>Message</button>
+					</div>
+					<Follow />
+					<SocialLinks social = {props.userProfilePage.userProfile} />
+				</div>
 			</div>
 			<div className={style.column2}>
 				<div className={style.user}>
@@ -24,4 +33,4 @@ const MyProfile = (props) => {
 	)
 }
 
-export default MyProfile;
+export default UserProfile;

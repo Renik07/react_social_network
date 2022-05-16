@@ -3,7 +3,7 @@ import MyProfile from './MyProfile';
 
 let mapStateToProps = (state) => {
 	return {
-		MyProfilePage: state.MyProfilePage
+		myProfilePage: state.myProfilePage
 	}
 }
 
