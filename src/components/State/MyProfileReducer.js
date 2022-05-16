@@ -8,9 +8,9 @@ let initialState = {
 	}
 }
 
-const MyProfileReducer = (state = initialState, action) => {
+const myProfileReducer = (state = initialState, action) => {
 
 	return state;
 }
 
-export default MyProfileReducer;
+export default myProfileReducer;

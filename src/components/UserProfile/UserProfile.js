@@ -1,28 +1,33 @@
+import Preloader from "../common/Preloader/Preloader";
 import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
 import style from "./UserProfile.module.css";
-import SocialLinks from "./SocialLinks/SocialLinks";
+/* import SocialLinks from "./SocialLinks/SocialLinks"; */
 
 const UserProfile = (props) => {
+
+	if (!props.profile) {
+		return <Preloader />
+	}
 
 	return(
 		<div className={style.container}>
 			<div className={style.column1}>
 				<div className={style.column1Wrapper}>
 					<div className={style.userImg}>
-						<img src="" alt=""/>
+						<img src={ props.profile.photos.large } alt=""/>
 					</div>
 					<div className={style.buttonsWrapper}>
 						<button className={style.buttonFollow}>Follow</button>
 						<button className={style.buttonMessage}>Message</button>
 					</div>
 					<Follow />
-					<SocialLinks social = {props.userProfilePage.userProfile} />
+					{/* <SocialLinks contacts={props.profile.contacts} /> */}
 				</div>
 			</div>
 			<div className={style.column2}>
 				<div className={style.user}>
-					<h2 className={style.name}>Renat G.</h2>
+					<h2 className={style.name}>{ props.profile.fullName }</h2>
 					<h3 className={style.profession}>Frontend developer (React developer)</h3>
 				</div>
 			</div>

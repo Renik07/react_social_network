@@ -1,13 +1,13 @@
 import { combineReducers, createStore } from "redux";
-import MyProfileReducer from "./MyProfileReducer";
+import myProfileReducer from "./myProfileReducer";
 import messagesReducer from "./messagesReducer";
 import usersReducer from "./usersReducer";
-import UserProfileReducer from "./UserProfileReducer";
+import userProfileReducer from "./userProfileReducer";
 
 let reducers = combineReducers({
 	messagesPage: messagesReducer,
-	myProfilePage: MyProfileReducer,
-	userProfilePage: UserProfileReducer,
+	myProfilePage: myProfileReducer,
+	userProfilePage: userProfileReducer,
 	usersPage: usersReducer
 });
 

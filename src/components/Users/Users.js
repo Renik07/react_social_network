@@ -43,7 +43,7 @@ const Users = (props) => {
 								: <button className={style.buttonFollow} onClick={ () => {props.follow(user.id)} }>Follow</button> 
 							}
 						</div>
-						<NavLink className={style.userLink} to="">View Profile</NavLink>
+						<NavLink className={style.userLink} to={`/userprofile/${user.id}`}>View Profile</NavLink>
 					</div>
 					) 
 				}

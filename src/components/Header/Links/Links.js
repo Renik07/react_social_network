@@ -14,31 +14,31 @@ const Links = (props) => {
 
 	return(
 		<nav className={style.nav}>
-			<NavLink className = { classActive } to={`/myprofile`}>
+			<NavLink className = { classActive } to='/myprofile'>
 				<img src={ iconProfile } alt='My profile' />
 				<div>My profile</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/companies`}>
+			<NavLink className = { classActive } to='/companies'>
 				<img src={ iconCompanies } alt='Companies' />
 				<div>Companies</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/projects`}>
+			<NavLink className = { classActive } to='/projects'>
 				<img src={ iconProjects } alt='Projects' />
 				<div>Projects</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/profiles`}>
+			<NavLink className = { classActive } to='/profiles'>
 				<img src={ iconProfiles } alt='Profiles' />
 				<div>Profiles</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/jobs`}>
+			<NavLink className = { classActive } to='/jobs'>
 				<img src={ iconJobs } alt='Jobs' />
 				<div>Jobs</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/messages`}>
+			<NavLink className = { classActive } to='/messages'>
 				<img src={ iconMessages } alt='Messages' />
 				<div>Messages</div>
 			</NavLink>
-			<NavLink className = { classActive } to={`/notification`}>
+			<NavLink className = { classActive } to='/notification'>
 				<img src={ iconNotification } alt='Notification' />
 				<div>Notification</div>
 			</NavLink>
