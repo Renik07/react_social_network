@@ -6,10 +6,7 @@
 	font-size: 24px;
 	font-family: "Source Sans Pro", sans-serif;
 	color: rgb(0, 0, 0);
-
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgb(229, 229, 229);
+	border: 1px solid rgb(229, 229, 229);
 	border-radius: 3px;
 	background-color: rgb(255, 255, 255);
 	padding: 20px;
@@ -23,11 +20,33 @@
 	gap: 30px;
 }
 
-.userWrapper {
+.userCard {
 	text-align: center;
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+.userInfo {
 	padding: 30px 40px;
+	
+}
+.userLink {
+	display: block;
+	border: none;
+	border-top: 1px solid rgb(229, 229, 229);
+	padding: 20px 40px;
+	background: #ffffff;
+	text-decoration: none;
+	color: #000000;
+	width: 100%;
+	transition: all 0.3s;
+	font-size: 20px;
+	font-family: "Source Sans Pro";	
+}
+.userLink:hover,
+.userLink:focus,
+.userLink:active {
+	background: rgb(81, 165, 251);
+	color: #ffffff;
 }
 
 .image {
@@ -39,10 +58,10 @@
 }
 
 .fullName {
-		font-size: 22px;
-		font-family: "Source Sans Pro", sans-serif;
-		color: rgb(0, 0, 0);
-		margin-bottom: 15px;
+	font-size: 22px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: rgb(0, 0, 0);
+	margin-bottom: 15px;
 }
 
 .profession {
