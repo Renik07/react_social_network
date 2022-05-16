@@ -1,15 +1,15 @@
 import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
-import style from "./Home.module.css";
+import style from "./MyProfile.module.css";
 import SocialLinks from "./SocialLinks/SocialLinks";
 
-const Home = (props) => {
+const MyProfile = (props) => {
 
 	return(
 		<div className={style.container}>
 			<div className={style.column1}>
 				<Follow />
-				<SocialLinks social = {props.homePage.homePage} />
+				<SocialLinks social = {props.MyProfilePage.MyProfilePage} />
 			</div>
 			<div className={style.column2}>
 				<div className={style.user}>
@@ -24,4 +24,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home;
+export default MyProfile;

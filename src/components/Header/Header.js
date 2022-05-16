@@ -1,4 +1,4 @@
-import Links from "../Links/Links";
+import Links from "./Links/Links";
 import style from "./Header.module.css";
 
 const Header = () => {

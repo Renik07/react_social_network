@@ -1,0 +1,18 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	max-width: 545px;
+	width: 100%;
+}
+
+.link {
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+.active {
+	color: #fff;
+	text-align: center;
+	text-decoration: underline;
+}

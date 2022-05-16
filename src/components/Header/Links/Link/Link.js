@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
+/* import { NavLink } from "react-router-dom";
 import style from "./Link.module.css";
+import iconCompanies from '../../assets/images/iconCompanies.png';
 
 const Link = (props) => {
 
@@ -7,10 +8,10 @@ const Link = (props) => {
 
 	return(
 		<NavLink className = { classActive } to={`/${props.url}`}>
-			<img src={`./images/icon-${props.img}.png`} alt={props.title} />
+			<img src={`./images/icon${props.img}.png`} alt={props.title} />
 			<div>{props.title}</div>
 		</NavLink>
 	)
 }
 
-export default Link;
+export default Link; */
