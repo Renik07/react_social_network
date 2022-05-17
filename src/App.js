@@ -15,7 +15,7 @@ const App = (props) => {
 				<div className={style.container}>
 					<Routes>
 						<Route path='/myprofile' element={<MyProfileContainer />} />
-						<Route path='/userprofile/*' element={<UserProfileContainer />} />
+						<Route path='/userprofile/:userId' element={<UserProfileContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/profiles' element={ <UsersContainer />} />
 					</Routes>
