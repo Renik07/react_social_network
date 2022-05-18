@@ -1,16 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
 import Background from './components/Background/Background';
-import Header from './components/Header/Header';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import MyProfileContainer from './components/MyProfile/MyProfileContainer';
 import UserProfileContainer from './components/UserProfile/UserProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 const App = (props) => {
   return (
 			<div className={style.app}>
-				<Header />
+				<HeaderContainer />
 				<Background />
 				<div className={style.container}>
 					<Routes>

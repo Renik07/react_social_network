@@ -26,3 +26,24 @@
 	font-family: "Source Sans Pro";
 	line-height: 1.667;
 }
+
+.wrapper {
+	margin-left: 40px;
+	max-width: 100px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: rgb(255, 255, 255);
+}
+
+.name {
+	color: rgb(255, 255, 255);
+	font-family: "Source Sans Pro";
+	margin-left: 10px;
+}
