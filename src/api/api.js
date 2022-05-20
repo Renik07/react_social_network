@@ -17,24 +17,28 @@ export const usersAPI = {
 			})
 	},
 	/* Users */
-	follow(user, propsFollow) {
+	follow(user, propsFollow, toggleFollowingProgress) {
 		return (
+			toggleFollowingProgress(true, user.id),
 			instance.post(`follow/${user.id}`, {})
 			.then(response => {
 					if (response.data.resultCode === 0) {
 						propsFollow(user.id)
 					}
+					toggleFollowingProgress(false, user.id);
 				})
 		)
 	},
 	/* Users */
-	unfollow(user, propsUnfollow) {
+	unfollow(user, propsUnfollow, toggleFollowingProgress) {
 		return (
+			toggleFollowingProgress(true, user.id),
 			instance.delete(`follow/${user.id}`)
 				.then(response => {
 					if (response.data.resultCode === 0) {
 						propsUnfollow(user.id)
 					}
+					toggleFollowingProgress(false, user.id);
 				})
 		)
 	}

@@ -85,6 +85,11 @@
 	cursor: pointer;
 }
 
+.buttonFollow:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}
+
 .buttonUnfollow {
   border-radius: 3px;
   background-color: rgb(228, 77, 58);
@@ -96,6 +101,11 @@
 	line-height: 1.757;
 	border: none;
 	cursor: pointer;
+}
+
+.buttonUnfollow:disabled {
+	cursor: not-allowed;
+	background-color: gray;
 }
 
 .paginationWrapper {
