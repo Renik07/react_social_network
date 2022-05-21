@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
-import { setUserProfile, getUserProfileThunkCreator } from '../redux/userProfileReducer';
+import { getUserProfileThunkCreator } from '../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
 
 class UserProfileContainer extends React.Component {
@@ -23,4 +23,4 @@ const TakeParams = (props) => {
 	return <UserProfileContainer {...props} params={useParams()} />
 }
 
-export default connect(mapStateToProps, {setUserProfile, getUserProfileTC: getUserProfileThunkCreator})(TakeParams);
+export default connect(mapStateToProps, {getUserProfileTC: getUserProfileThunkCreator})(TakeParams);

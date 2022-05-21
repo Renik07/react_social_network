@@ -72,13 +72,13 @@ const usersReducer = (state = initialState, action) => {
 	}
 }
 
-export const follow = (userId) => ({type: FOLLOW, userId});
-export const unfollow = (userId) => ({type: UNFOLLOW, userId});
-export const setUsers = (users) => ({type: SET_USERS, users});
-export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setTotalUsersCount = (totalCount) => ({type: SET_USERS_TOTAL_COUNT, totalCount});
-export const togglePreloader = (isFetchingPreloader) => ({type: TOGGLE_PRELOADER, isFetchingPreloader});
-export const toggleFollowingProgress = (isFollowingProgress, userId) => ({type: TOGGLE_FOLLOWING_PROGRESS, isFollowingProgress, userId});
+const follow = (userId) => ({type: FOLLOW, userId});
+const unfollow = (userId) => ({type: UNFOLLOW, userId});
+const setUsers = (users) => ({type: SET_USERS, users});
+const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+const setTotalUsersCount = (totalCount) => ({type: SET_USERS_TOTAL_COUNT, totalCount});
+const togglePreloader = (isFetchingPreloader) => ({type: TOGGLE_PRELOADER, isFetchingPreloader});
+const toggleFollowingProgress = (isFollowingProgress, userId) => ({type: TOGGLE_FOLLOWING_PROGRESS, isFollowingProgress, userId});
 
 export const getUsersThunkCreator = (currentPage, pageSize) => {
 	return (dispatch) => {
