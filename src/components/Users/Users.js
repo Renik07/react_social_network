@@ -3,7 +3,6 @@ import style from './Users.module.css';
 import userAvatar from '../../assets/images/avatar.png';
 import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
-import { usersAPI } from '../../api/api';
 
 const Users = (props) => {
 
@@ -40,8 +39,8 @@ const Users = (props) => {
 							<h3 className={style.fullName}>{ user.name }</h3>
 							<h4 className={style.profession}>{ user.profession }</h4>
 							{ user.followed 
-								? <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonUnfollow} onClick={() => usersAPI.unfollow(user, props.unfollow, props.toggleFollowingProgress) }>Unfollow</button> 
-								: <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonFollow} onClick={() => usersAPI.follow(user, props.follow, props.toggleFollowingProgress) }>Follow</button> 
+								? <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonUnfollow} onClick={ () => props.unfollowTC(user.id) }>Unfollow</button> 
+								: <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonFollow} onClick={ () => props.followTC(user.id) }>Follow</button> 
 							}
 						</div>
 						<NavLink className={style.userLink} to={`/userprofile/${user.id}`}>View Profile</NavLink>
