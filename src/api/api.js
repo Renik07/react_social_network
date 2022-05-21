@@ -41,5 +41,18 @@ export const usersAPI = {
 					toggleFollowingProgress(false, user.id);
 				})
 		)
+	},
+	/* HeaderContainer */
+	setAuthUserData(propsSetAuthUserData) {
+		return (
+			instance.get(`auth/me`)
+				.then(response => {
+					if (response.data.resultCode === 0) {
+						let {id, login, email} = response.data.data;
+						propsSetAuthUserData(id, login, email);
+						/* второй запрос для получения профиля, картинки и т.д. */
+					}
+				})
+		)
 	}
 }
