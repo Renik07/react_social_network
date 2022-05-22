@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { withAuthNavigate } from '../../hoc/withAuthNavigate';
 import MyProfile from './MyProfile';
-
-/* HOC */
-let AuthNavigateComponent = withAuthNavigate(MyProfile);
 
 let mapStateToProps = (state) => {
 	return {
@@ -11,4 +9,11 @@ let mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {})(AuthNavigateComponent);
+/* HOC, Compose */
+export default compose(
+	connect(mapStateToProps, {}),
+	withAuthNavigate
+)(MyProfile);
+
+/* let AuthNavigateComponent = withAuthNavigate(MyProfile);
+export default connect(mapStateToProps, {})(AuthNavigateComponent); */
