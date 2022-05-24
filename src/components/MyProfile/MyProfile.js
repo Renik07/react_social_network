@@ -18,7 +18,7 @@ const MyProfile = (props) => {
 					<div className={style.user}>
 						<h2 className={style.name}>Renat G.</h2>
 						<h3 className={style.profession}>Frontend developer (React developer)</h3>
-						<ProfileStatus status="Hello!!!" />
+						<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 					</div>
 				</div>
 				<div className={style.column3}>
