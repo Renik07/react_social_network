@@ -17,16 +17,33 @@ export const usersAPI = {
 			})
 	},
 	/* Users */
+/* 	follow(userId) {
+		return instance.post(`follow/${userId}`, {})
+	}, */
+	/* Users */
+/* 	unfollow(userId) {
+		return instance.delete(`follow/${userId}`)
+	}, */
+	/* UserProfileContainer */
+/* 	getUserProfile(userId) {
+		return instance.get(`profile/${userId}`)
+	} */
+}
+export const profileAPI = {
+	/* UserProfileContainer */
+	getUserProfile(userId) {
+		return instance.get(`profile/${userId}`)
+	}
+}
+
+export const followAPI = {
+	/* Users */
 	follow(userId) {
 		return instance.post(`follow/${userId}`, {})
 	},
 	/* Users */
 	unfollow(userId) {
 		return instance.delete(`follow/${userId}`)
-	},
-	/* UserProfileContainer */
-	getUserProfile(userId) {
-		return instance.get(`profile/${userId}`)
 	}
 }
 
