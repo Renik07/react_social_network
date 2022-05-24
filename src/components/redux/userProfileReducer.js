@@ -1,4 +1,4 @@
-import { usersAPI } from "../../api/api";
+import { profileAPI } from "../../api/api";
 
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
@@ -22,7 +22,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 
 export const getUserProfileThunkCreator = (userId) => {
 	return (dispatch) => {
-		usersAPI.getUserProfile(userId)
+		profileAPI.getUserProfile(userId)
 			.then(response => {
 				dispatch(setUserProfile(response.data));
 			})

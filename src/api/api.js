@@ -16,18 +16,6 @@ export const usersAPI = {
 				return response.data;
 			})
 	},
-	/* Users */
-/* 	follow(userId) {
-		return instance.post(`follow/${userId}`, {})
-	}, */
-	/* Users */
-/* 	unfollow(userId) {
-		return instance.delete(`follow/${userId}`)
-	}, */
-	/* UserProfileContainer */
-/* 	getUserProfile(userId) {
-		return instance.get(`profile/${userId}`)
-	} */
 }
 export const profileAPI = {
 	/* UserProfileContainer */
@@ -49,7 +37,7 @@ export const followAPI = {
 
 export const authAPI = {
 	/* HeaderContainer */
-	setAuthUserData() {
+	me() {
 		return (
 			instance.get(`auth/me`)
 		)

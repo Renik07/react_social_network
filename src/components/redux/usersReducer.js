@@ -1,4 +1,4 @@
-import { usersAPI } from "../../api/api";
+import { followAPI, usersAPI } from "../../api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -107,7 +107,7 @@ export const getUsersPageNumberThunkCreator = (pageNumber, pageSize) => {
 export const followThunkCreator = (userId) => {
 	return (dispatch) => {
 		dispatch(toggleFollowingProgress(true, userId));
-		usersAPI.follow(userId)
+		followAPI.follow(userId)
 			.then(response => {
 				if (response.data.resultCode === 0) {
 					dispatch(follow(userId))
@@ -120,7 +120,7 @@ export const followThunkCreator = (userId) => {
 export const unfollowThunkCreator = (userId) => {
 	return (dispatch) => {
 		dispatch(toggleFollowingProgress(true, userId));
-		usersAPI.unfollow(userId)
+		followAPI.unfollow(userId)
 			.then(response => {
 				if (response.data.resultCode === 0) {
 					dispatch(unfollow(userId))
