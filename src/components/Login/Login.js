@@ -1,7 +1,13 @@
-import LoginForm from '../../forms/LoginForm/LoginForm';
+import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { loginThunkCreator } from '../../redux/authReducer';
+import LoginForm from '../forms/LoginForm/LoginForm';
 import style from './Login.module.css';
 
 const Login = (props) => {
+
+	if (props.isAuth) return <Navigate to='/myprofile' />;
+
 	return (
 		<div className={style.login}>
 			<div className={style.container}>
@@ -16,12 +22,17 @@ const Login = (props) => {
 				<div className={style.column2}>
 					<div className={style.signIn}>Sign In</div>
 					<h3 className={style.subtitle}>Sign In</h3>
-					<LoginForm {...props}/>
+					<LoginForm {...props} loginTC={props.loginTC}/>
 				</div>
 			</div>
 		</div>
 	)
 }
 
+let mapStateToProps = (state) => {
+	return {
+		isAuth: state.auth.isAuth
+	}
+}
 
-export default Login;
+export default connect(mapStateToProps, {loginTC: loginThunkCreator})(Login);

@@ -2,7 +2,7 @@ import React from 'react';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
-import MessagesForm from '../../forms/MessagesForm/MessagesForm';
+import MessagesForm from '../forms/MessagesForm/MessagesForm';
 
 
 const Messages = (props) => {

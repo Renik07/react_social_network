@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import style from "./LoginForm.module.css";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
 	const formik = useFormik({
 		initialValues: {
@@ -12,11 +12,13 @@ const LoginForm = () => {
 		},
 
 		onSubmit: (values, {setSubmitting})=> {
+			props.loginTC(values.email, values.password, values.rememberMe);
+			console.log();
 			/* resetForm( {values: ''} ); */
-			setTimeout(() => {
+			/* setTimeout(() => {
 				alert(JSON.stringify(values, null, 2));
 				setSubmitting(false);
-			}, 400);
+			}, 400); */
 
 		},
 		validationSchema: Yup.object({

@@ -11,7 +11,9 @@ const Header = (props) => {
 				<Links />
 				<div className={style.wrapper}>
 					<img className={style.avatar} src='' alt=''/>
-					{ props.isAuth ? <div className={style.name}>{props.login}</div> : <NavLink to='/login' className={style.name}>Login</NavLink> }
+					{ props.isAuth 
+						? <div><div className={style.name}>{props.login}</div><button onClick={() => props.logoutTC()}>Log out</button></div>
+						: <NavLink to='/login' className={style.name}>Log in</NavLink> }
 				</div>
 			</div>
 		</header>

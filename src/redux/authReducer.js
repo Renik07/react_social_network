@@ -14,15 +14,14 @@ const authReducer = (state = initialState, action) => {
 		case SET_AUTH_USER_DATA:
 			return {
 				...state,
-				...action.data,
-				isAuth: true
+				...action.payload
 			}
 		default:
 			return state;
 	}
 }
 
-const setAuthUserData = (id, login, email) => ({type: SET_AUTH_USER_DATA, data: {id, login, email}})
+const setAuthUserData = (id, login, email, isAuth = false) => ({type: SET_AUTH_USER_DATA, payload: {id, login, email, isAuth}})
 
 export const getAuthUserDataThunkCreator = () => {
 	return(dispatch) => {
@@ -30,11 +29,33 @@ export const getAuthUserDataThunkCreator = () => {
 			.then(response => {
 				if (response.data.resultCode === 0) {
 					let {id, login, email} = response.data.data;
-					dispatch(setAuthUserData(id, login, email));
+					dispatch(setAuthUserData(id, login, email, true));
 					/* второй запрос для получения профиля, картинки и т.д. */
 				}
 			})
 	}
+}
+
+export const loginThunkCreator = (email, password, rememberMe) => (dispatch) => {
+	return (
+		authAPI.login(email, password, rememberMe)
+			.then(response => {
+				if (response.data.resultCode === 0) {
+					dispatch(getAuthUserDataThunkCreator());
+				}
+			})
+	)
+}
+
+export const logoutThunkCreator = () => (dispatch) => {
+	return (
+		authAPI.logout()
+			.then(response => {
+				if (response.data.resultCode === 0) {
+					dispatch(setAuthUserData(null, null, null, false));
+				}
+			})
+	)
 }
 
 export default authReducer;
