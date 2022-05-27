@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withAuthNavigate } from '../../hoc/withAuthNavigate';
-import { getUserStatusThunkCreator, updateUserStatusThunkCreator } from '../redux/myProfileReducer';
+import { getUserStatusThunkCreator, updateUserStatusThunkCreator } from '../../redux/myProfileReducer';
 import MyProfile from './MyProfile';
 
 class MyProfileContainer extends React.Component {

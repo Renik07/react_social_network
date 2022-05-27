@@ -1,4 +1,4 @@
-import store from './components/redux/redux-store';
+import store from './redux/redux-store';
 /* import reportWebVitals from './reportWebVitals'; */
 import React from 'react';
 import ReactDOM from 'react-dom';

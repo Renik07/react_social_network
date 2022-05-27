@@ -1,0 +1,37 @@
+.send {
+	grid-area: dialogs-bottom;
+	border: 1px solid #f2f2f2;
+	background: #f3f5f7;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px;
+	gap: 20px;
+}
+
+.input {
+	flex: 0 1 640px;
+	border-radius: 3px;
+	font-size: 16px;
+	color: rgb(0, 0, 0);
+	padding: 15px;
+	border: none;
+}
+
+.input::placeholder {
+	color: rgb(178, 178, 178);
+}
+
+.button {
+	border-radius: 3px;
+	background-color: rgb(228, 77, 58);
+	padding: 15px 40px;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.error {
+	color: rgb(228, 77, 58);
+}

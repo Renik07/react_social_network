@@ -2,24 +2,14 @@ import React from 'react';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
+import MessagesForm from '../../forms/MessagesForm/MessagesForm';
 
 
 const Messages = (props) => {
 
-	let dialog = props.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
+	let dialogs = props.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let message = props.messages.map(m => <MessageItem key={m.id} message={m.message} />);
-
-	let newMessage = React.createRef();
-
-	let onAddMessage = () => {
-		props.addMessage();
-	}
-
-	let onNewMessage = () => {
-		let text = newMessage.current.value;
-		props.updateNewMessage(text);
-	}
+	let messages = props.messages.map(m => <MessageItem key={m.id} message={m.message} />);
 
 	return (
 		<div className={style.container}>
@@ -36,15 +26,12 @@ const Messages = (props) => {
 				</div>
 			</div>
 			<div className={style.dialogs}>
-				 { dialog }
+				 { dialogs }
 			</div>
 			<div className={style.messages}>
-				{ message }
+				{ messages }
 			</div>
-			<div className={style.send}>
-					<input onChange={onNewMessage} ref={ newMessage } className={style.input} type="text" value={props.newTextMessage} placeholder="Type a message here" />
-					<button className={style.button} onClick={ onAddMessage }>Send</button>	
-			</div>
+			<MessagesForm {...props}/>
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { getUsersThunkCreator, getUsersPageNumberThunkCreator, followThunkCreator, unfollowThunkCreator } from "../redux/usersReducer";
+import { getUsersThunkCreator, getUsersPageNumberThunkCreator, followThunkCreator, unfollowThunkCreator } from "../../redux/usersReducer";
 import React from 'react';
 import Users from './Users';
 

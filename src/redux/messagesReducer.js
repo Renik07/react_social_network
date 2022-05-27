@@ -1,5 +1,4 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE";
 
 let initialState = {
 	
@@ -17,35 +16,25 @@ let initialState = {
 		{id: 2, message: "message 2"},
 		{id: 3, message: "message 3"},
 		{id: 4, message: "message 4"}
-	],
-	newTextMessage: ""
+	]
 }
 
 const messagesReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_MESSAGE:
 			let newMsg = {
-				id: 5, message: state.newTextMessage
+				id: 5, message: action.newTextMessage
 			}
 			return {
 				...state,
-				messagesData: [...state.messagesData, newMsg],
-				newTextMessage: ""
+				messagesData: [...state.messagesData, newMsg]
 			}
-		case UPDATE_TEXT_MESSAGE:
-			return {
-				...state,
-				newTextMessage: action.text
-			}
-	
 		default:
 			return state;
 	}
 }
 
 // создаем action для дальнейшего dispatch'a в MessagesContainer'е
-export const addMessage = () => ({type: ADD_MESSAGE});
-
-export const updateNewMessage = (text) => ({type: UPDATE_TEXT_MESSAGE, text});
+export const addMessage = (newTextMessage) => ({type: ADD_MESSAGE, newTextMessage});
 
 export default messagesReducer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
-import { getUserProfileThunkCreator } from '../redux/userProfileReducer';
+import { getUserProfileThunkCreator } from '../../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
 
 class UserProfileContainer extends React.Component {
