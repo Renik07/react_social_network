@@ -1,0 +1,40 @@
+.inputName {
+	margin-bottom: 20px;
+	font-size: 14px;
+	max-width: 285px;
+	width: 100%;
+	padding: 15px 30px;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+}
+
+.inputPassword {
+	margin-bottom: 30px;
+	font-size: 14px;
+	max-width: 285px;
+	width: 100%;
+	padding: 15px 30px;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+}
+
+.checkbox {
+	margin-bottom: 35px;
+}
+
+.inputCheckbox {
+	margin-right: 5px;
+}
+
+.button {
+  font-size: 16px;
+	max-width: 125px;
+	color: #ffffff;
+  background-color: rgb(228, 77, 58);
+	padding: 10px 30px;
+	border-radius: 3px;
+	margin-left: auto;
+	margin-bottom: 80px;
+	border: none;
+	cursor: pointer;
+}
