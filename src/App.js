@@ -6,13 +6,22 @@ import MyProfileContainer from './components/MyProfile/MyProfileContainer';
 import UserProfileContainer from './components/UserProfile/UserProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
+import React from 'react';
+import { connect } from 'react-redux';
+import { getAuthUserDataThunkCreator } from './redux/authReducer';
 
-const App = (props) => {
-  return (
+class App extends React.Component {
+	componentDidMount() {
+		this.props.getAuthUserDataTC()
+	}
+
+	render() {
+		return (
 			<div className={style.app}>
 				<HeaderContainer />
 				<div className={style.container}>
 					<Routes>
+						<Route path='/' element={<MyProfileContainer />} />
 						<Route path='/myprofile' element={<MyProfileContainer />} />
 						<Route path='/userprofile/:userId' element={<UserProfileContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
@@ -21,7 +30,8 @@ const App = (props) => {
 					</Routes>
 				</div>
 			</div>
-  );
+  	);
+	}
 }
 
-export default App;
+export default connect(null, {getAuthUserDataTC: getAuthUserDataThunkCreator})(App);
