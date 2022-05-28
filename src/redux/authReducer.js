@@ -36,12 +36,14 @@ export const getAuthUserDataThunkCreator = () => {
 	}
 }
 
-export const loginThunkCreator = (email, password, rememberMe) => (dispatch) => {
+export const loginThunkCreator = (email, password, rememberMe, setStatus) => (dispatch) => {
 	return (
 		authAPI.login(email, password, rememberMe)
 			.then(response => {
 				if (response.data.resultCode === 0) {
 					dispatch(getAuthUserDataThunkCreator());
+				} else {
+					setStatus({error: response.data.messages})
 				}
 			})
 	)

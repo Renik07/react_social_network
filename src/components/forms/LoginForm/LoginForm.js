@@ -11,9 +11,9 @@ const LoginForm = (props) => {
 			rememberMe: false
 		},
 
-		onSubmit: (values, {setSubmitting})=> {
-			props.loginTC(values.email, values.password, values.rememberMe);
-			console.log();
+		onSubmit: (values, {setSubmitting, setStatus})=> {
+			props.loginTC(values.email, values.password, values.rememberMe, setStatus);
+
 			/* resetForm( {values: ''} ); */
 			/* setTimeout(() => {
 				alert(JSON.stringify(values, null, 2));
@@ -29,7 +29,14 @@ const LoginForm = (props) => {
 				.max(20, 'Must be 20 characters or less')
 				.required('Required')
 		})
+
+		
 	});
+
+	let apiErrors;
+	if(formik.status) {
+			apiErrors = formik.status.error.map((item, index) => <p className={style.error} key={index}>{item}</p>)
+	}
 	
 	return(
 		<form onSubmit={formik.handleSubmit}>
@@ -53,6 +60,7 @@ const LoginForm = (props) => {
 				placeholder="Password"
 				validationSchema={formik.validationSchema} />
 			{formik.errors.password &&  formik.touched.password ? <p className={style.error}>{formik.errors.password}</p> : null}
+			{ apiErrors }
 			<div className={style.checkbox}>
 				<label>
 					<input 
