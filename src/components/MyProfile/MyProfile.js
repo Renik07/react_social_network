@@ -4,7 +4,7 @@ import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
 import style from "./MyProfile.module.css";
 import SocialLinks from "./SocialLinks/SocialLinks";
-import Posts from "./Posts/Posts";
+import Posts from "../Posts/Posts";
 
 const MyProfile = (props) => {
 	return(
