@@ -1,54 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "../MyProfile.module.css";
 
-class ProfileStatus extends React.Component {
-	state = {
-		editMode: false,
-		status: this.props.status
+const ProfileStatus = (props) => {
+
+	let [editMode, setEditMode] = useState(false);
+	let [status, setStatus] = useState(props.status);
+
+	const activateEditMode = () => {
+		setEditMode(true);
+	}
+	const deactivateEditMode = () => {
+		setEditMode(false);
+		props.updateStatus(status);
 	}
 
-	activateEditMode = () => {
-		this.setState({
-			editMode: true
-		})
+	const onStatusChange = (event) => {
+		setStatus(event.currentTarget.value)
 	}
 
-	deactivateEditMode = () => {
-		this.setState({
-			editMode: false
-		})
-		this.props.updateStatus(this.state.status);
-	}
+	useEffect(() => {
+		setStatus(props.status)
+	}, [props.status])
 
-
-	onStatusChange = (event) => {
-		this.setState({
-			status: event.currentTarget.value
-		})
-	}
-
-	componentDidUpdate(prevProps, prevState) {
-		if (prevProps.status !== this.props.status) {
-			this.setState({
-				status: this.props.status
-			})
-		}
-	}
-
-	render() {
-		return (
-			<div className={style.wrapperStatus}>
-				Status:
-				{this.state.editMode
-					? 
-						<input className={style.inputStatus} onChange={this.onStatusChange} onBlur={this.deactivateEditMode} value={this.state.status} />
-					: 
-					<div className={style.status} onClick={this.activateEditMode}>{this.props.status || "no status"}</div>
-				}
-			</div>
-		)
-	}
-	
+	return (
+		<div className={style.wrapperStatus}>
+			Status:
+			{editMode
+				? 
+					<input className={style.inputStatus} onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true} value={status} />
+				: 
+				<div className={style.status} onClick={activateEditMode} >{props.status || "no status"}</div>
+			}
+		</div>
+	)
 }
 
 export default ProfileStatus;
