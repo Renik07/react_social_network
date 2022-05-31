@@ -1,5 +1,11 @@
+import ProfileTabs from "./ProfileTabs/ProfileTabs";
+
 const Posts = () => {
-	return <h1>Posts</h1>
+	return (
+		<div>
+			<ProfileTabs />
+		</div>
+	)
 }
 
 export default Posts;
