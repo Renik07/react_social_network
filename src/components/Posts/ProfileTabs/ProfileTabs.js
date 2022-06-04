@@ -9,6 +9,7 @@ import reviews from '../../../assets/images/ProfileTabs/icon-reviews.png';
 import payment from '../../../assets/images/ProfileTabs/icon-payment.png';
 import Feed from '../Feed/Feed';
 import Info from '../Info/Info';
+import Jobs from '../Jobs/Jobs';
 
 const ProfileTabs = () => {
 	return (
@@ -51,7 +52,7 @@ const ProfileTabs = () => {
 				<Info />
 			</TabPanel>
 			<TabPanel>
-				<h2>Any content 1</h2>
+				<Jobs />
 			</TabPanel>
 			<TabPanel>
 				<h2>Any content 2</h2>

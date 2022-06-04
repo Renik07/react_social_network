@@ -1,0 +1,208 @@
+.jobs {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.card {
+	padding: 30px 20px;
+	border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.title {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  line-height: 1.111;
+	margin-bottom: 30px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+  line-height: 1.429;
+	margin-bottom: 30px;
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.candidates {
+	max-width: 110px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+  border-radius: 3px;
+  background-color: rgb(228, 77, 58);
+	padding: 5px 10px 5px 5px;
+
+	font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+
+.num {
+	padding: 2px 7px;
+	border-radius: 3px;
+  background-color: rgb(189, 46, 28);
+}
+
+.text {
+
+}
+
+.edit {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.edit:before {
+	position: absolute;
+	content: "";
+	width: 17px;
+	height: 15px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: url("../../../assets/images/Jobs/edit.png") no-repeat;
+	background-size: contain;
+}
+
+.delete {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.delete:before {
+	position: absolute;
+	content: "";
+	width: 14px;
+	height: 15px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: url("../../../assets/images/Jobs/delete.png") no-repeat;
+	background-size: contain;
+}
+
+
+
+
+
+
+
+/* .info {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.card {
+	padding: 30px 20px;
+	border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.title {
+	display: inline-block;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  line-height: 1.111;
+	position: relative;
+	padding-right: 20px;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+
+.title:after {
+	position: absolute;
+	content: "";
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	width: 12px;
+	height: 12px;
+	background: url("../../../assets/images/Info/pencil.png") no-repeat;
+}
+
+.text {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+  line-height: 1.714;
+}
+
+.professions {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.profession {
+
+}
+
+.subtitle {
+	display: table;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.25;
+	margin-bottom: 15px;
+	padding-right: 20px;
+	position: relative;
+	cursor: pointer;
+}
+
+.subtitle:after {
+	position: absolute;
+	content: "";
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	width: 12px;
+	height: 12px;
+	background: url("../../../assets/images/Info/pencil.png") no-repeat;
+}
+
+.educations {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.education {
+
+}
+
+.years {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+  line-height: 1.714;
+	margin-bottom: 10px;
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.skill {
+  background-color: rgb(229, 229, 229);
+	padding: 10px 15px;
+	border-radius: 20px;
+  font-size: 14px;
+  color: rgb(178, 178, 178);
+} */
