@@ -8,6 +8,7 @@ import portfolio from '../../../assets/images/ProfileTabs/icon-portfolio.png';
 import reviews from '../../../assets/images/ProfileTabs/icon-reviews.png';
 import payment from '../../../assets/images/ProfileTabs/icon-payment.png';
 import Feed from '../Feed/Feed';
+import Info from '../Info/Info';
 
 const ProfileTabs = () => {
 	return (
@@ -47,7 +48,7 @@ const ProfileTabs = () => {
 				<Feed />
 			</TabPanel>
 			<TabPanel>
-				<h2>Any content 2</h2>
+				<Info />
 			</TabPanel>
 			<TabPanel>
 				<h2>Any content 1</h2>

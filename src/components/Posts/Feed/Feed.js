@@ -43,7 +43,7 @@ const Feed = () => {
               luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id
               magna sit amet.
             </p>
-						<div className={style.mainSkiils}>
+						<div className={style.mainSkills}>
 							<div className={style.mainSkill}>HTML</div>
 							<div className={style.mainSkill}>PHP</div>
 							<div className={style.mainSkill}>CSS</div>
