@@ -1,0 +1,47 @@
+.portfolio {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.card {
+	padding: 30px 20px;
+	border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.title {
+
+}
+
+.button {
+	border: none;
+	color: #fff;
+	padding: 12px;
+	background: rgb(228, 77, 58);
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.body {
+	display: grid;
+	grid-template: auto / repeat(auto-fit,minmax(170px, 1fr));
+	gap: 10px;
+}
+
+.item {
+	min-height: 170px;
+  border-radius: 3px;
+  background-color: rgb(225, 225, 225);
+}
+
+.item img {
+	
+}

@@ -6,6 +6,7 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	gap: 30px;
 }
 
 .column1 {
@@ -16,7 +17,7 @@
 	
 }
 .column2 {
-	max-width: 570px;
+	max-width: 610px;
 	background: transparent;
 
 	width: 100%;
@@ -29,7 +30,7 @@
 
 /*  */
 .user {
-	padding: 30px 20px;
+	padding: 30px 0px;
 }
 .name {
 	font-size: 40px;

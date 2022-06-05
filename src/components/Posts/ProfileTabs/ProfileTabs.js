@@ -11,6 +11,7 @@ import Feed from '../Feed/Feed';
 import Info from '../Info/Info';
 import Jobs from '../Jobs/Jobs';
 import Bids from '../Bids/Bids';
+import Portfolio from '../Portfolio/Portfolio';
 
 const ProfileTabs = () => {
 	return (
@@ -59,7 +60,7 @@ const ProfileTabs = () => {
 				<Bids />
 			</TabPanel>
 			<TabPanel>
-				<h2>Any content 1</h2>
+				<Portfolio />
 			</TabPanel>
 			<TabPanel>
 				<h2>Any content 2</h2>
