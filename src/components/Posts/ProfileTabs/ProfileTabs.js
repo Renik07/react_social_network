@@ -12,6 +12,7 @@ import Info from '../Info/Info';
 import Jobs from '../Jobs/Jobs';
 import Bids from '../Bids/Bids';
 import Portfolio from '../Portfolio/Portfolio';
+import Reviews from '../Reviews/Reviews';
 
 const ProfileTabs = () => {
 	return (
@@ -63,7 +64,7 @@ const ProfileTabs = () => {
 				<Portfolio />
 			</TabPanel>
 			<TabPanel>
-				<h2>Any content 2</h2>
+				<Reviews />
 			</TabPanel>
 			<TabPanel>
 				<h2>Any content 2</h2>
