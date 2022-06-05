@@ -1,4 +1,4 @@
-.jobs {
+.bids {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -22,7 +22,28 @@
   font-size: 14px;
   color: rgb(104, 104, 104);
   line-height: 1.429;
+	margin-bottom: 20px;
+}
+
+.budget {
+	display: flex;
+	gap: 50px;
+}
+
+.budgetCol {
 	margin-bottom: 30px;
+}
+
+.budgetText {
+	margin-bottom: 15px;
+	font-size: 14px;
+  line-height: 1.429;
+}
+
+.budgetPrice {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+  line-height: 1.429;
 }
 
 .buttons {
@@ -31,7 +52,7 @@
 	gap: 10px;
 }
 
-.candidates {
+.bidders {
 	max-width: 110px;
 	display: flex;
 	gap: 10px;
