@@ -13,6 +13,7 @@ import Jobs from '../Jobs/Jobs';
 import Bids from '../Bids/Bids';
 import Portfolio from '../Portfolio/Portfolio';
 import Reviews from '../Reviews/Reviews';
+import Payment from '../Payment/Payment';
 
 const ProfileTabs = () => {
 	return (
@@ -67,7 +68,7 @@ const ProfileTabs = () => {
 				<Reviews />
 			</TabPanel>
 			<TabPanel>
-				<h2>Any content 2</h2>
+				<Payment />
 			</TabPanel>
 		</Tabs>
 	)
