@@ -23,9 +23,9 @@ class App extends React.Component {
 					<Routes>
 						<Route path='/' element={<MyProfileContainer />} />
 						<Route path='/myprofile' element={<MyProfileContainer />} />
-						<Route path='/userprofile/:userId' element={<UserProfileContainer />} />
+						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
-						<Route path='/profiles' element={ <UsersContainer />} />
+						<Route path='/users' element={ <UsersContainer />} />
 						<Route path='/login' element={ <Login />} />
 					</Routes>
 				</div>

@@ -3,7 +3,7 @@ import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
 import style from "./UserProfile.module.css";
 import userAvatar from '../../assets/images/avatar.png';
-/* import SocialLinks from "./SocialLinks/SocialLinks"; */
+import ProfileStatus from "../MyProfile/ProfileStatus/ProfileStatus";
 
 const UserProfile = (props) => {
 
@@ -30,6 +30,7 @@ const UserProfile = (props) => {
 				<div className={style.user}>
 					<h2 className={style.name}>{ props.profile.fullName }</h2>
 					<h3 className={style.profession}>Frontend developer (React developer)</h3>
+					<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 				</div>
 			</div>
 			<div className={style.column3}>

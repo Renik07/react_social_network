@@ -26,7 +26,7 @@ const Links = (props) => {
 				<img src={ iconProjects } alt='Projects' />
 				<div>Projects</div>
 			</NavLink>
-			<NavLink className = { classActive } to='/profiles'>
+			<NavLink className = { classActive } to='/users'>
 				<img src={ iconProfiles } alt='Profiles' />
 				<div>Profiles</div>
 			</NavLink>

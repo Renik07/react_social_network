@@ -43,7 +43,7 @@ const Users = (props) => {
 								: <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonFollow} onClick={ () => props.followTC(user.id) }>Follow</button> 
 							}
 						</div>
-						<NavLink className={style.userLink} to={`/userprofile/${user.id}`}>View Profile</NavLink>
+						<NavLink className={style.userLink} to={`/profile/${user.id}`}>View Profile</NavLink>
 					</div>
 					) 
 				}
