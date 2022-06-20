@@ -23,17 +23,15 @@ const authReducer = (state = initialState, action) => {
 
 const setAuthUserData = (id, login, email, isAuth = false) => ({type: SET_AUTH_USER_DATA, payload: {id, login, email, isAuth}})
 
-export const getAuthUserDataThunkCreator = () => {
-	return(dispatch) => {
-		authAPI.me()
-			.then(response => {
-				if (response.data.resultCode === 0) {
-					let {id, login, email} = response.data.data;
-					dispatch(setAuthUserData(id, login, email, true));
-					/* второй запрос для получения профиля, картинки и т.д. */
-				}
-			})
-	}
+export const getAuthUserDataThunkCreator = () => (dispatch) => {
+	return authAPI.me()
+		.then(response => {
+			if (response.data.resultCode === 0) {
+				let {id, login, email} = response.data.data;
+				dispatch(setAuthUserData(id, login, email, true));
+				/* второй запрос для получения профиля, картинки и т.д. */
+			}
+		})
 }
 
 export const loginThunkCreator = (email, password, rememberMe, setStatus) => (dispatch) => {

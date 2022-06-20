@@ -8,14 +8,18 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAuthUserDataThunkCreator } from './redux/authReducer';
+import { initializeAppThunkCreator } from './redux/appReducer';
+import Preloader from './components/common/Preloader/Preloader';
 
 class App extends React.Component {
 	componentDidMount() {
-		this.props.getAuthUserDataTC()
+		this.props.initializeAppTC()
 	}
 
 	render() {
+
+		if (!this.props.initialized) return <Preloader />
+
 		return (
 			<div className={style.app}>
 				<HeaderContainer />
@@ -34,4 +38,8 @@ class App extends React.Component {
 	}
 }
 
-export default connect(null, {getAuthUserDataTC: getAuthUserDataThunkCreator})(App);
+let mapStateToProps = (state) => ({
+	initialized: state.app.initialized
+})
+
+export default connect(mapStateToProps, {initializeAppTC: initializeAppThunkCreator})(App);
