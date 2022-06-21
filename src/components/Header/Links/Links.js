@@ -14,7 +14,7 @@ const Links = (props) => {
 
 	return(
 		<nav className={style.nav}>
-			<NavLink className = { classActive } to='/myprofile'>
+			<NavLink className = { classActive } to='/profile'>
 				<img src={ iconProfile } alt='My profile' />
 				<div>My profile</div>
 			</NavLink>

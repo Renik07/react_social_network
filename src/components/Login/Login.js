@@ -6,7 +6,7 @@ import style from './Login.module.css';
 
 const Login = (props) => {
 
-	if (props.isAuth) return <Navigate to='/myprofile' />;
+	if (props.isAuth) return <Navigate to='/profile/' />;
 
 	return (
 		<div className={style.login}>

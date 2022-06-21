@@ -25,8 +25,8 @@ class App extends React.Component {
 				<HeaderContainer />
 				<div className={style.container}>
 					<Routes>
-						<Route path='/' element={<MyProfileContainer />} />
-						<Route path='/myprofile' element={<MyProfileContainer />} />
+						{<Route path='/profile' element={<UserProfileContainer />} />}
+						{/* <Route path='/myprofile' element={<MyProfileContainer />} /> */}
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/users' element={ <UsersContainer />} />

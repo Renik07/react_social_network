@@ -1,7 +1,11 @@
 .container {
+
+}
+.wrapper {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	gap: 30px;
 }
 /*  */
 .column1 {

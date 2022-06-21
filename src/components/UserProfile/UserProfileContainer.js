@@ -7,7 +7,11 @@ import { useParams } from 'react-router-dom';
 class UserProfileContainer extends React.Component {
 	componentDidMount() {
 		const params = this.props.params;
-		
+
+		if(!params.userId) {
+			params.userId = this.props.authorizedId
+		}
+
 		this.props.getUserProfileTC(params.userId);
 		this.props.getUserStatusTC(params.userId);
 
@@ -25,7 +29,8 @@ class UserProfileContainer extends React.Component {
 let mapStateToProps = (state) => ({
 	profile: state.userProfilePage.profile,
 	status: state.userProfilePage.status,
-	id: state.auth.id
+	authorizedId: state.auth.id,
+	isAuth: state.auth.isAuth
 })
 
 const TakeParams = (props) => {
