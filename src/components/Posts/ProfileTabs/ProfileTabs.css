@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding-bottom: 50px;
+	padding: 25px 0px;
 }
 
 .react-tabs__tab {

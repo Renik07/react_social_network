@@ -1,0 +1,16 @@
+.wrapperStatus {
+	padding: 5px 0px;
+}
+
+.inputStatus {
+	display: inline-block;
+	padding: 5px;
+}
+
+.status {
+	display: inline-block;
+	padding: 5px;
+	cursor: pointer;
+  color: rgb(81, 165, 251);
+  text-decoration: underline;
+}

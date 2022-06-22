@@ -18,6 +18,17 @@ const Users = (props) => {
 	let curPL = curP + 4;
 	let slicedPages = arrPages.slice( curPF, curPL);
 
+	const showHideButtons = (userFollowed, userId) => {
+		if (props.isAuth) {
+			return <> { userFollowed 
+					? <button disabled={props.followingInProgress.some(id => id === userId)} className={style.buttonUnfollow} onClick={ () => props.unfollowTC(userId) }>Unfollow</button> 
+					: <button disabled={props.followingInProgress.some(id => id === userId)} className={style.buttonFollow} onClick={ () => props.followTC(userId) }>Follow</button> 
+				}</>
+		} else {
+			return null
+		}
+	}
+
 	return (
 		<div className={style.container}>
 			<h2 className={style.title}>Profiles</h2>
@@ -38,10 +49,7 @@ const Users = (props) => {
 							<img className={style.image} src={ user.photos.small != null ? user.photos.small : userAvatar } alt="" />
 							<h3 className={style.fullName}>{ user.name }</h3>
 							<h4 className={style.profession}>{ user.profession }</h4>
-							{ user.followed 
-								? <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonUnfollow} onClick={ () => props.unfollowTC(user.id) }>Unfollow</button> 
-								: <button disabled={props.followingInProgress.some(id => id === user.id)} className={style.buttonFollow} onClick={ () => props.followTC(user.id) }>Follow</button> 
-							}
+							{ showHideButtons(user.followed, user.id) }
 						</div>
 						<NavLink className={style.userLink} to={`/profile/${user.id}`}>View Profile</NavLink>
 					</div>
