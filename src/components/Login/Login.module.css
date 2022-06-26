@@ -14,20 +14,30 @@
 	max-width: 870px;
 	width: 100%;
 	margin: 100px auto 100px;
-	background: #ffffff;
 	border-radius: 3px;
 	padding: 30px 50px 80px;
+	background: 
+		url('../../assets/images/Login/login-img.png') bottom 75px left no-repeat,#ffffff;
 }
 
 .column1 {
 	flex: 0 1 390px;
 }
 
+.titleBlock {
+	display: flex;
+	align-items: center;
+	margin-top: 55px;
+	margin-bottom: 35px;
+}
+
+.logo {
+	margin-right: 15px;
+}
+
 .title {
   color: rgb(0, 0, 0);
   font-weight: bold;
-	margin-top: 55px;
-	margin-bottom: 35px;
 }
 
 .text {

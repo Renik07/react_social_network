@@ -1,13 +1,17 @@
 import Links from "./Links/Links";
 import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
+import logo from '../../assets/images/logo.png';
 
 const Header = (props) => {
 	return(
 		<header className={style.header}>
 			<div className={style.container}>
-				<img className={style.img} src='./logo.png' alt='logo'/>
-				<input className={style.input} type='text' />
+				<img className={style.img} src={logo} alt='logo'/>
+				<div className={style.inputWrapper}> 
+					<input className={style.input} type='text' placeholder='Search...' />
+					<button className={style.button}></button>
+				</div>
 				<Links />
 				<div className={style.wrapper}>
 					<img className={style.avatar} src='' alt=''/>

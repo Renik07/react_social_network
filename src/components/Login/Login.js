@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { loginThunkCreator } from '../../redux/authReducer';
 import LoginForm from '../forms/LoginForm/LoginForm';
 import style from './Login.module.css';
+import logo from '../../assets/images/logo.png';
 
 const Login = (props) => {
 
@@ -12,7 +13,10 @@ const Login = (props) => {
 		<div className={style.login}>
 			<div className={style.container}>
 				<div className={style.column1}>
-					<h2 className={style.title}>Workwise</h2>
+					<div className={style.titleBlock}>
+						<img className={style.logo} src={logo} alt='logo'/>
+						<h2 className={style.title}>Workwise</h2>
+					</div>
 					<p className={style.text}>
 						Workwise, is a global freelancing platform and social networking 
 						where businesses and independent professionals connect and 
