@@ -18,7 +18,7 @@ class App extends React.Component {
 
 	render() {
 
-		/* if (!this.props.initialized) return <Preloader /> */
+		if (!this.props.initialized) return <Preloader />
 
 		return (
 			<div className={style.app}>
@@ -33,9 +33,7 @@ class App extends React.Component {
 						<Route path='/login' element={ <Login />} />
 					</Routes>
 				</div>
-				<div className={style.footerWrapper}>
-					<Footer />
-				</div>
+				<Footer />
 			</div>
   	);
 	}

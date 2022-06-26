@@ -1,20 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
-import { getUserProfileThunkCreator, getUserStatusThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
+import { getUserProfileThunkCreator, getUserStatusThunkCreator, savePhotoThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
 
 class UserProfileContainer extends React.Component {
-	componentDidMount() {
-		const params = this.props.params;
+	
+	/* savePhoto = (file) => {
+		this.props.savePhotoTC(file);
+	} */
 
+	updateProfile = () => {
+		const params = this.props.params;
 		if(!params.userId) {
 			params.userId = this.props.authorizedId
 		}
 
 		this.props.getUserProfileTC(params.userId);
 		this.props.getUserStatusTC(params.userId);
+	}
 
+	componentDidMount() {
+		this.updateProfile();
+	}
+	componentDidUpdate(prevProps, prevState) {
+		/* debugger; */
+		if (this.props.params.userId !== prevProps.params.userId) {
+			this.updateProfile();
+		}
 	}
 	render() {
 		return <UserProfile 
@@ -22,6 +35,8 @@ class UserProfileContainer extends React.Component {
 			profile={this.props.profile}
 			status={this.props.status} 
 			updateStatus={this.props.updateUserStatusTC}
+			savePhoto={this.props.savePhotoTC}
+			isOwner={this.props.params.userId === this.props.authorizedId}
 		/>
 	}
 }
@@ -40,5 +55,6 @@ const TakeParams = (props) => {
 export default connect(mapStateToProps, {
 	getUserProfileTC: getUserProfileThunkCreator, 
 	updateUserStatusTC: updateUserStatusThunkCreator,
-	getUserStatusTC: getUserStatusThunkCreator
+	getUserStatusTC: getUserStatusThunkCreator,
+	savePhotoTC: savePhotoThunkCreator,
 })(TakeParams);

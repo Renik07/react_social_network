@@ -2,6 +2,7 @@ import { profileAPI } from "../api/api";
 
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
+const SET_MAIN_PHOTO = 'SET_MAIN_PHOTO';
 
 let initialState = {
 	status: "",
@@ -20,14 +21,19 @@ const userProfileReducer = (state = initialState, action) => {
 				...state,
 				status: action.status
 			}
+		case SET_MAIN_PHOTO:
+			return {
+				...state,
+				profile: {...state.profile, photos: action.photos}
+			}
 			default:
 				return state;
 	}
 }
 
 export const setStatusAC = (status) => ({type: SET_STATUS, status})
-
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const setMainPhotoAC = (photos) => ({type: SET_MAIN_PHOTO, photos});
 
 export const getUserProfileThunkCreator = (userId) => {
 	return (dispatch) => {
@@ -51,6 +57,13 @@ export const getUserStatusThunkCreator = (userId) => (dispatch) => {
 	profileAPI.getUserStatus(userId)
 		.then(response => {
 			dispatch(setStatusAC(response.data));
+		})
+}
+
+export const savePhotoThunkCreator = (file) => (dispatch) => {
+	profileAPI.savePhoto(file)
+		.then(response => {
+			dispatch(setMainPhotoAC(response.data.data.photos));
 		})
 }
 
