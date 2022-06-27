@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Users.module.css';
-import Preloader from '../common/Preloader/Preloader';
 import User from './User/User';
+import Skeleton from '../common/Skeleton/Skeleton';
 
 const Users = (props) => {
 
@@ -28,13 +28,11 @@ const Users = (props) => {
 				}) }
 			</div>
 			
-			{ props.isFetchingPreloader ? <Preloader />	: null }
-			
 			<div className={style.wrapper}>
-				{ 
-					props.users.map(user => 
-						<User key={user.id} {...user} {...props}/>
-					) 
+				{ props.isFetchingPreloader 
+					? [...new Array(20)].map((_, index) => <Skeleton key={index} />) 
+					: props.users.map(user => <User key={user.id} {...user} {...props}/>
+					)
 				}
 			</div>
 		</div>
