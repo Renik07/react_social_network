@@ -5,10 +5,6 @@ import { getUserProfileThunkCreator, getUserStatusThunkCreator, savePhotoThunkCr
 import { useParams } from 'react-router-dom';
 
 class UserProfileContainer extends React.Component {
-	
-	/* savePhoto = (file) => {
-		this.props.savePhotoTC(file);
-	} */
 
 	updateProfile = () => {
 		const params = this.props.params;
@@ -24,7 +20,6 @@ class UserProfileContainer extends React.Component {
 		this.updateProfile();
 	}
 	componentDidUpdate(prevProps, prevState) {
-		/* debugger; */
 		if (this.props.params.userId !== prevProps.params.userId) {
 			this.updateProfile();
 		}

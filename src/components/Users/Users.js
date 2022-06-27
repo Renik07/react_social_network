@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './Users.module.css';
-import userAvatar from '../../assets/images/avatar.png';
 import Preloader from '../common/Preloader/Preloader';
-import { NavLink } from 'react-router-dom';
+import User from './User/User';
 
 const Users = (props) => {
 
@@ -17,17 +16,6 @@ const Users = (props) => {
 	let curPF = ((curP - 5) < 0) ?  0  : curP - 5 ;
 	let curPL = curP + 4;
 	let slicedPages = arrPages.slice( curPF, curPL);
-
-	const showHideButtons = (userFollowed, userId) => {
-		if (props.isAuth) {
-			return <> { userFollowed 
-					? <button disabled={props.followingInProgress.some(id => id === userId)} className={style.buttonUnfollow} onClick={ () => props.unfollowTC(userId) }>Unfollow</button> 
-					: <button disabled={props.followingInProgress.some(id => id === userId)} className={style.buttonFollow} onClick={ () => props.followTC(userId) }>Follow</button> 
-				}</>
-		} else {
-			return null
-		}
-	}
 
 	return (
 		<div className={style.container}>
@@ -44,15 +32,8 @@ const Users = (props) => {
 			
 			<div className={style.wrapper}>
 				{ 
-					props.users.map(user => <div className={style.userCard} key={user.id}>
-						<div className={style.userInfo}>
-							<img className={style.image} src={ user.photos.small != null ? user.photos.small : userAvatar } alt="" />
-							<h3 className={style.fullName}>{ user.name }</h3>
-							<h4 className={style.profession}>{ user.profession }</h4>
-							{ showHideButtons(user.followed, user.id) }
-						</div>
-						<NavLink className={style.userLink} to={`/profile/${user.id}`}>View Profile</NavLink>
-					</div>
+					props.users.map(user => 
+						<User key={user.id} {...user} {...props}/>
 					) 
 				}
 			</div>
