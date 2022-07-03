@@ -1,0 +1,108 @@
+.container {
+
+}
+
+.title {
+	font-size: 24px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+	background-color: rgb(255, 255, 255);
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.wrapper {
+	display: grid;
+	grid-template: auto / repeat(auto-fit,minmax(260px, 1fr));
+	gap: 30px;
+	margin-bottom: 30px;
+}
+
+.card {
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+.info {
+	padding: 30px 40px;
+	
+}
+.link {
+	display: block;
+	border: none;
+	border-top: 1px solid rgb(229, 229, 229);
+	padding: 20px 40px;
+	background: #ffffff;
+	text-decoration: none;
+	color: #000000;
+	width: 100%;
+	transition: all 0.3s;
+	font-size: 20px;
+	font-family: "Source Sans Pro";	
+}
+.link:hover,
+.link:focus,
+.link:active {
+	background: rgb(81, 165, 251);
+	color: #ffffff;
+}
+
+.image {
+	border-radius: 50%;
+	background-color: rgb(225, 225, 225);
+	width: 130px;
+	height: 130px;
+	margin-bottom: 15px;
+}
+
+.name {
+	font-size: 22px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: rgb(0, 0, 0);
+	margin-bottom: 15px;
+}
+
+.profession {
+	font-size: 17px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: rgb(104, 104, 104);
+	line-height: 1.15;
+	margin-bottom: 20px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.follow {
+  border-radius: 3px;
+  background-color: rgb(83, 214, 144);
+  width: 70px;
+  height: 34px;
+	font-size: 14px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: rgb(255, 255, 255);
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.follow:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}
+
+.message {
+  border-radius: 3px;
+  background-color: rgb(228, 77, 58);
+  height: 34px;
+	cursor: pointer;
+}
+
+.message:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}

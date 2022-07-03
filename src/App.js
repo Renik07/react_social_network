@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { initializeAppThunkCreator } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
 import Footer from './components/Footer/Footer';
+import Companies from './components/Companies/Companies';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -26,7 +27,7 @@ class App extends React.Component {
 				<div className={style.container}>
 					<Routes>
 						{<Route path='/profile' element={<UserProfileContainer />} />}
-						{/* <Route path='/myprofile' element={<MyProfileContainer />} /> */}
+						{<Route path='/companies' element={<Companies />} />}
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/users' element={ <UsersContainer />} />
