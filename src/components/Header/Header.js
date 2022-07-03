@@ -17,7 +17,15 @@ const Header = (props) => {
 					<img className={style.avatar} src='' alt=''/>
 					{ props.isAuth 
 						? <div>
-								<div className={style.name}>{props.login}</div><button className={style.btnLogout} onClick={() => props.logoutTC()}>Logout</button>
+								<div className={style.name}>{props.login}&#9662;</div>
+								<div className={style.popup}>
+									<button className={style.btnPopup} onClick>Setting</button>
+									<button className={style.btnPopup} onClick>Account Setting</button>
+									<button className={style.btnPopup} onClick>Privacy</button>
+									<button className={style.btnPopup} onClick>Faqs</button>
+									<button className={style.btnPopup} onClick>Terms & Conditions</button>
+									<button className={style.btnPopup} onClick={() => props.logoutTC()}>Logout</button>
+								</div>
 							</div>
 						: <NavLink to='/login' className={style.name}>Log in</NavLink> }
 				</div>
