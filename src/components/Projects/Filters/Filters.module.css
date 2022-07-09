@@ -1,0 +1,131 @@
+.filters {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.filters h3 {
+  font-size: 18px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px 20px;
+	border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.clear {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+	cursor: pointer;
+}
+
+.body {
+	padding: 30px 20px 50px 20px;
+}
+
+.skills {
+	margin-bottom: 30px;
+}
+
+.heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(229, 229, 229);
+	margin-bottom: 10px;
+}
+
+.heading h4 {
+  font-size: 16px;
+}
+
+.input {
+	max-width: 100%;
+	width: 100%;
+	background-color: rgb(242, 242, 242);
+	border-radius: 3px;
+	border: 1px solid rgb(229, 229, 229);
+	padding: 10px;
+	outline: none;
+	font-size: 12px;
+}
+
+.input:focus {
+	background-color: rgb(255, 255, 255);
+}
+
+.availabilty {
+	margin-bottom: 30px;
+}
+
+.radioButtons {
+	display: flex;
+	flex-direction: column;
+}
+
+.radioButtons input {
+	margin-right: 10px;
+}
+
+.radioButtons label {
+  font-size: 14px;
+	color: rgb(104, 104, 104);
+	line-height: 1.429;
+}
+
+.projectType,
+.rate,
+.experience {
+	margin-bottom: 30px;
+}
+
+select {
+	max-width: 100%;
+	width: 100%;
+	background-color: rgb(242, 242, 242);
+	border-radius: 3px;
+	border: 1px solid rgb(229, 229, 229);
+	padding: 10px;
+	outline: none;
+	font-size: 12px;
+}
+
+.rate {
+
+}
+
+.range {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 120px;
+	width: 100%;
+}
+
+.rate input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 50px;
+	height: 25px;
+	background-color: rgb(229, 229, 229);
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 15px;
+	font-size: 12px;
+	color: rgb(178, 178, 178);
+	outline: none;
+	border: none;
+}
+
+.rate input:focus {
+	background-color: rgb(255, 255, 255);
+}
+
+.inputRange {
+	max-width: 100%;
+	width: 100%;
+}

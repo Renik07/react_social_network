@@ -11,6 +11,7 @@ import { initializeAppThunkCreator } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
 import Footer from './components/Footer/Footer';
 import Companies from './components/Companies/Companies';
+import Projects from './components/Projects/Projects';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -26,9 +27,10 @@ class App extends React.Component {
 				<HeaderContainer />
 				<div className={style.container}>
 					<Routes>
-						{<Route path='/profile' element={<UserProfileContainer />} />}
-						{<Route path='/companies' element={<Companies />} />}
+						<Route path='/profile' element={<UserProfileContainer />} />
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
+						<Route path='/companies' element={<Companies />} />
+						<Route path='/projects' element={<Projects />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/users' element={ <UsersContainer />} />
 						<Route path='/login' element={ <Login />} />

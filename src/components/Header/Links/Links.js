@@ -18,6 +18,10 @@ const Links = (props) => {
 				<img src={ iconProfile } alt='My profile' />
 				<div>My profile</div>
 			</NavLink>
+			<NavLink className = { classActive } to='/users'>
+				<img src={ iconProfiles } alt='Profiles' />
+				<div>Profiles</div>
+			</NavLink>
 			<NavLink className = { classActive } to='/companies'>
 				<img src={ iconCompanies } alt='Companies' />
 				<div>Companies</div>
@@ -25,10 +29,6 @@ const Links = (props) => {
 			<NavLink className = { classActive } to='/projects'>
 				<img src={ iconProjects } alt='Projects' />
 				<div>Projects</div>
-			</NavLink>
-			<NavLink className = { classActive } to='/users'>
-				<img src={ iconProfiles } alt='Profiles' />
-				<div>Profiles</div>
 			</NavLink>
 			<NavLink className = { classActive } to='/jobs'>
 				<img src={ iconJobs } alt='Jobs' />
