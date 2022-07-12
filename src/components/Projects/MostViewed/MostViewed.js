@@ -1,35 +1,13 @@
-import style from "./TopJobs.module.css";
+import style from "./MostViewed.module.css";
 import { NavLink } from "react-router-dom";
 
-const TopJobs = () => {
+const MostViewed = () => {
 	return(
-		<section className={style.topJobs}>
+		<section className={style.mostViewed}>
 			<div className={style.header}>
-				<h3>Top Jobs</h3>
+				<h3>Most Viewed This Week</h3>
 			</div>
 			<ul className={style.list}>
-				<li className={style.item}>
-					<div className={style.blockText}>
-						<NavLink className={style.link} to={`/topjob`}>
-							<h4>Senior Product Designer</h4>
-						</NavLink>
-						<div className={style.desc}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit..
-						</div>
-					</div>
-					<div className={style.price}>$55 / hr</div>
-				</li>
-				<li className={style.item}>
-					<div className={style.blockText}>
-						<NavLink className={style.link} to={`/topjob`}>
-							<h4>Senior UI / UX Designer</h4>
-						</NavLink>
-						<div className={style.desc}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit..
-						</div>
-					</div>
-					<div className={style.price}>$40 / hr</div>
-				</li>
 				<li className={style.item}>
 					<div className={style.blockText}>
 						<NavLink className={style.link} to={`/topjob`}>
@@ -68,4 +46,4 @@ const TopJobs = () => {
 	)
 }
 
-export default TopJobs;
+export default MostViewed;

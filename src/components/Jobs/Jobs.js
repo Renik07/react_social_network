@@ -1,11 +1,11 @@
 import Feed from "../Posts/Feed/Feed";
-import Banner from "./Banner/Banner";
-import Filters from "./Filters/Filters";
-import MostViewed from "./MostViewed/MostViewed";
-import style from "./Projects.module.css";
-import TopJobs from "./TopJobs/TopJobs";
+import Banner from "../Projects/Banner/Banner";
+import Filters from "../Projects/Filters/Filters";
+import MostViewed from "../Projects/MostViewed/MostViewed";
+import TopJobs from "../Projects/TopJobs/TopJobs";
+import style from "./Jobs.module.css";
 
-const Projects = () => {
+const Jobs = () => {
 	return(
 		<section className={style.projects}>
 			<div className={style.container}>
@@ -31,4 +31,4 @@ const Projects = () => {
 	)
 }
 
-export default Projects;
+export default Jobs;

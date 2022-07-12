@@ -22,13 +22,13 @@ const Links = (props) => {
 				<img src={ iconProfiles } alt='Profiles' />
 				<div>Profiles</div>
 			</NavLink>
-			<NavLink className = { classActive } to='/companies'>
-				<img src={ iconCompanies } alt='Companies' />
-				<div>Companies</div>
-			</NavLink>
 			<NavLink className = { classActive } to='/projects'>
 				<img src={ iconProjects } alt='Projects' />
 				<div>Projects</div>
+			</NavLink>
+			<NavLink className = { classActive } to='/companies'>
+				<img src={ iconCompanies } alt='Companies' />
+				<div>Companies</div>
 			</NavLink>
 			<NavLink className = { classActive } to='/jobs'>
 				<img src={ iconJobs } alt='Jobs' />

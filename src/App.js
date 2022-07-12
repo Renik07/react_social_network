@@ -12,6 +12,7 @@ import Preloader from './components/common/Preloader/Preloader';
 import Footer from './components/Footer/Footer';
 import Companies from './components/Companies/Companies';
 import Projects from './components/Projects/Projects';
+import Jobs from './components/Jobs/Jobs';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -31,6 +32,7 @@ class App extends React.Component {
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/companies' element={<Companies />} />
 						<Route path='/projects' element={<Projects />} />
+						<Route path='/jobs' element={<Jobs />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/users' element={ <UsersContainer />} />
 						<Route path='/login' element={ <Login />} />
