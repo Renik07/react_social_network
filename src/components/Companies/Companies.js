@@ -5,7 +5,7 @@ const Companies = (props) => {
 
 	return (
 		<div className={style.container}>
-			<h2 className={style.title}>All Companies</h2>
+			<h2 className={style.title}>Companies</h2>
 			
 			<div className={style.wrapper}>
 				{[...new Array(16)].map((_, index) => <Company key={index} />)}

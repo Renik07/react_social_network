@@ -1,0 +1,162 @@
+.notification {
+
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 30px;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+
+.column1 {
+	flex: 0 1 770px;
+	background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.list {
+
+}
+
+.item {
+	display: flex;
+	align-items: flex-start;
+	padding: 25px;
+	cursor: pointer;
+	transition: all 0.3s;
+	border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.item:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.avatar {
+	max-width: 60px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+.avatar img {
+	max-width: 100%;
+	height: auto;
+}
+
+.body {
+	flex: 0 1 100%;
+}
+
+.title {
+  font-size: 16px;
+	line-height: 1.25;
+	margin-bottom: 20px;
+}
+
+.details {
+	display: flex;
+	justify-content: space-between;
+	max-width: 330px;
+	width: 100%;
+	margin-bottom: 20px;
+	font-size: 14px;
+  color: rgb(178, 178, 178)
+}
+
+.likes {
+	padding-left: 20px;
+	position: relative;
+}
+
+.likes::before {
+	content: "";
+  position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 16px;
+	height: 13px;
+	background: url("../../assets/images/Feed/like.png") no-repeat;
+}
+
+.comments {
+	padding-left: 20px;
+	position: relative;
+}
+.comments::before {
+	content: "";
+  position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 16px;
+	height: 14px;
+	background: url("../../assets/images/Feed/comments.png") no-repeat;
+}
+
+.views {
+	padding-left: 20px;
+	position: relative;
+}
+
+.views::before {
+	content: "";
+  position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 16px;
+	height: 9px;
+	background: url("../../assets/images/Feed/eye.png") no-repeat;
+}
+
+.footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.tag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 70px;
+	font-size: 14px;
+	background-color: rgb(83, 214, 144);
+	color: #ffffff;
+	padding: 7px 12px;
+	border-radius: 20px;
+}
+
+.date {
+	flex: 0 0 80px;
+	font-size: 14px;
+	text-align: right;
+  color: rgb(178, 178, 178);
+	position: relative;
+	padding-left: 20px;
+}
+.date::before {
+	content: "";
+  position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 12px;
+	height: 12px;
+	background: url("../../assets/images/Notification/clock.png") no-repeat;
+}
+
+.column2 {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 0 1 370px;
+}
