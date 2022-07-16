@@ -58,7 +58,19 @@
   color: rgb(104, 104, 104);
 }
 
-.iconWrapper {
+.iconCheckWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+	cursor: pointer;
+	background: rgb(228, 77, 58);
+}
+
+.iconPlusWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -70,5 +82,4 @@
 }
 
 .checkIcon {
-
 }

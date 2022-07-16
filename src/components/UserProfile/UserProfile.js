@@ -7,6 +7,7 @@ import chooseMainPhoto from '../../assets/images/choose-main-photo.png';
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import Background from "../Background/Background";
 import Posts from "../Posts/Posts";
+import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople";
 
 const UserProfile = (props) => {
 
