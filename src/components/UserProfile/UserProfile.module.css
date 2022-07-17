@@ -12,12 +12,18 @@
 .column1 {
 	max-width: 270px;
 	width: 100%;
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
 }
 .column1Wrapper {
-	padding: 110px 0px 0px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 20px;
 	position: relative;
+}
+.column1Inner {
+	padding: 110px 0px 0px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
 }
 .mainPhoto {
 	position: absolute;

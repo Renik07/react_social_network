@@ -26,27 +26,30 @@ const UserProfile = (props) => {
 			<div className={style.wrapper}>
 				<div className={style.column1}>
 					<div className={style.column1Wrapper}>
-						<div className={style.mainPhoto}>
-							{props.isOwner && 
-								<div className={style.btnPhotoWrapper}>
-									<label htmlFor="file-input" className={style.labelMainPhoto}>
-										<img src={chooseMainPhoto} alt=""/>
-									</label>
-									<input 
-										id="file-input"
-										type="file" 
-										onChange={onSavePhoto} 
-										accept=".jpg, .jpeg, .png"
-										className={style.btnMainPhoto} />
-								</div>
-							}
-							<img src={ props.profile.photos.large != null ? props.profile.photos.large : defaultUserPhoto } alt=""/>
+						<div className={style.column1Inner}>
+							<div className={style.mainPhoto}>
+								{props.isOwner && 
+									<div className={style.btnPhotoWrapper}>
+										<label htmlFor="file-input" className={style.labelMainPhoto}>
+											<img src={chooseMainPhoto} alt=""/>
+										</label>
+										<input 
+											id="file-input"
+											type="file" 
+											onChange={onSavePhoto} 
+											accept=".jpg, .jpeg, .png"
+											className={style.btnMainPhoto} />
+									</div>
+								}
+								<img src={ props.profile.photos.large != null ? props.profile.photos.large : defaultUserPhoto } alt=""/>
+							</div>
+							<div className={style.buttonsWrapper}>
+								<button className={style.buttonFollow}>Follow</button>
+								<button className={style.buttonMessage}>Message</button>
+							</div>
+							<Follow />
 						</div>
-						<div className={style.buttonsWrapper}>
-							<button className={style.buttonFollow}>Follow</button>
-							<button className={style.buttonMessage}>Message</button>
-						</div>
-						<Follow />
+						<MostViewedPeople />
 						{/* <SocialLinks contacts={props.profile.contacts} /> */}
 					</div>
 				</div>

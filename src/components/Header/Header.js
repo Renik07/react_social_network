@@ -15,9 +15,9 @@ const Header = (props) => {
 				<Links />
 				
 				<div className={style.wrapper}>
-				<img className={style.avatar} src="" alt=""/>
 					{ props.isAuth 
-						? <div>
+						? <div className={style.wrapper}>
+								<img className={style.avatar} src="" alt=""/>
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
 									<button className={style.btnPopup}>Setting</button>
