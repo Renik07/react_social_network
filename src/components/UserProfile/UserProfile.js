@@ -8,6 +8,7 @@ import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import Background from "../Background/Background";
 import Posts from "../Posts/Posts";
 import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople";
+import AboutUser from "./AboutUser/AboutUser";
 
 const UserProfile = (props) => {
 
@@ -49,7 +50,7 @@ const UserProfile = (props) => {
 							</div>
 							<Follow />
 						</div>
-						<MostViewedPeople />
+						<AboutUser />
 						{/* <SocialLinks contacts={props.profile.contacts} /> */}
 					</div>
 				</div>
@@ -63,6 +64,7 @@ const UserProfile = (props) => {
 				</div>
 				<div className={style.column3}>
 					<Friends />
+					<MostViewedPeople />
 				</div>
 			</div>
 		</div>

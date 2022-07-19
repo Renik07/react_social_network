@@ -4,7 +4,7 @@ const Friends = () => {
 	return(
 		<div className={style.friends}>
 			<div className={style.friendsHeader}>
-				<div className={style.friendsTitle}>Friends</div>
+				<h3 className={style.friendsTitle}>Friends</h3>
 			</div>
 			<div className={style.friendsBody}>
 				<div className={style.friend}></div>
