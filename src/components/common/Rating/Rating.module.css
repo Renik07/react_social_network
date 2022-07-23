@@ -1,0 +1,33 @@
+.rating {
+	
+}
+
+.stars {
+	display: inline-flex;
+}
+
+.starDefault {
+	font-size: 22px;
+	color: #fff;
+	cursor: pointer;
+	padding-right: 5px;
+	text-shadow: 
+		1px 0 #8bd320, -1px 0 #8bd320, 0 1px #8bd320, 0 -1px #8bd320,
+		1px 1px #8bd320, -1px -1px #8bd320, 1px -1px #8bd320, -1px 1px #8bd320;
+}
+.starGreen {
+	font-size: 22px;
+	color: #fff;
+	cursor: pointer;
+	padding-right: 5px;
+	color: #8bd320;
+	text-shadow: 
+		1px 0 #8bd320, -1px 0 #8bd320, 0 1px #8bd320, 0 -1px #8bd320,
+		1px 1px #8bd320, -1px -1px #8bd320, 1px -1px #8bd320, -1px 1px #8bd320;
+}
+
+.reviews {
+	display: inline-block;
+	font-size: 16px;
+  color: rgb(81, 165, 251);
+}

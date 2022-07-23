@@ -23,40 +23,6 @@
   color: rgb(228, 77, 58);
 	margin-bottom: 15px;
 }
-/*  */
-.stars {
-	display: inline-flex;
-	flex-direction: row-reverse;
-}
-
-.star {
-	font-size: 22px;
-	color: #fff;
-	cursor: pointer;
-	padding-right: 5px;
-	text-shadow: 
-		1px 0 #8bd320, -1px 0 #8bd320, 0 1px #8bd320, 0 -1px #8bd320,
-		1px 1px #8bd320, -1px -1px #8bd320, 1px -1px #8bd320, -1px 1px #8bd320;
-}
-
-.star:hover,
-.star:hover ~ .star {
-	color: #8bd320;
-}
-
-.stars[data-total-value="1"] .star:nth-child(n+5),
-.stars[data-total-value="2"] .star:nth-child(n+4),
-.stars[data-total-value="3"] .star:nth-child(n+3),
-.stars[data-total-value="4"] .star:nth-child(n+2),
-.stars[data-total-value="5"] .star:nth-child(n+1) {
-	color: #8bd320;
-}
-
-.reviews {
-	display: inline-block;
-	font-size: 16px;
-  color: rgb(81, 165, 251);
-}
 
 .block {
 	font-size: 14px;

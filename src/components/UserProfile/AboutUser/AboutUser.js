@@ -1,20 +1,15 @@
+import Rating from "../../common/Rating/Rating";
 import style from "./AboutUser.module.css";
 
 const AboutUser = () => {
+
 	return (
 		<section className={style.aboutUser}>
 			<h3 className={style.title}>About the Client</h3>
 			<div className={style.block}>
 				<h4 className={style.ratingTitle}>Payment Method</h4>
 				<div className={style.ratingSubtitle}>Verified</div>
-				<div className={style.stars} data-total-value="0">
-					<div className={style.star} data-item-value="5">★</div>
-					<div className={style.star} data-item-value="4">★</div>
-					<div className={style.star} data-item-value="3">★</div>
-					<div className={style.star} data-item-value="2">★</div>
-					<div className={style.star} data-item-value="1">★</div>
-				</div>
-				<div className={style.reviews}>5.00 of 5 Reviews</div>
+				<Rating />
 			</div>
 			<div className={style.block}>
 				<h4 className={style.subtitle}>India</h4>
