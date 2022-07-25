@@ -81,7 +81,7 @@
 	display: none;
 }
 
-.btnPopup {
+.btnLogout {
 	display: block;
 	max-width: 100%;
 	width: 100%;
@@ -95,10 +95,10 @@
 	transition: all 0.3s;
 }
 
-.btnPopup:hover,
-.btnPopup:focus,
-.btnPopup:active {
-	background: rgb(81, 165, 251);
+.btnLogout:hover,
+.btnLogout:focus,
+.btnLogout:active {
+	background: rgb(228, 77, 58);
 	color: #ffffff;
 }
 

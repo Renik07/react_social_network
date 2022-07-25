@@ -2,6 +2,12 @@ import Links from "./Links/Links";
 import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
+import ModalButton from "../common/Modal/ModalButton";
+import Settings from "../modalComponents/Settings/Settings";
+import AccSettings from "../modalComponents/AccSettings/AccSettings";
+import Privacy from "../modalComponents/Privacy/Privacy";
+import Faqs from "../modalComponents/Faqs/Faqs";
+import Terms from "../modalComponents/Terms/Terms";
 
 const Header = (props) => {
 	return(
@@ -13,21 +19,20 @@ const Header = (props) => {
 					<button className={style.button}></button>
 				</div>
 				<Links />
-				
 				<div className={style.wrapper}>
 					{ props.isAuth 
 						? <div className={style.wrapper}>
 								<img className={style.avatar} src="" alt=""/>
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
-									<button className={style.btnPopup}>Setting</button>
+									<ModalButton component={<Settings />} nameButton="Settings" clsName="btnPopup"/>
 									<div className={style.popupInner}>
-										<button className={style.btnPopup}>Account Setting</button>
-										<button className={style.btnPopup}>Privacy</button>
-										<button className={style.btnPopup}>Faqs</button>
-										<button className={style.btnPopup}>Terms & Conditions</button>
+									<ModalButton component={<AccSettings />} nameButton="Account Settings" clsName="btnPopup"/>
+									<ModalButton component={<Privacy />} nameButton="Privacy" clsName="btnPopup"/>
+									<ModalButton component={<Faqs />} nameButton="Faqs" clsName="btnPopup"/>
+									<ModalButton component={<Terms />} nameButton="Terms & Conditions" clsName="btnPopup"/>
 									</div>
-									<button className={style.btnPopup} onClick={() => props.logoutTC()}>Logout</button>
+									<button className={style.btnLogout} onClick={() => props.logoutTC()}>Logout</button>
 								</div>
 							</div>
 						: <NavLink to='/login' className={style.name}>Log in</NavLink> }
