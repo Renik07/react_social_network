@@ -30,13 +30,13 @@
 	transition: 0.5s all;
 }
 
-.modalContent {
-	width: 400px;
-	height: 400px;
+.modalWrapper {
+	width: 55vw;
+	min-height: 400px;
 	background-color: #fff;
 	border-radius: 3px;
 	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
-	padding: 30px 20px;
+	position: relative;
 }
 
 .btnPopup {
@@ -58,4 +58,16 @@
 .btnPopup:active {
 	background: rgb(81, 165, 251);
 	color: #ffffff;
+}
+
+.close {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	color: #d8d8d8;
+	cursor: pointer;
+}
+
+.modalContent {
+
 }

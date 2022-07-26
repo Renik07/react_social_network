@@ -1,11 +1,12 @@
-/* import style from "./Modal.module.css"; */
+import style from "./Settings.module.css";
 
 const Settings = () => {
 
 	return (
-		<section>
+		<div className={style.settings}>
+			<h2 className={style.title}>Settings</h2>
 			Settings
-		</section>
+		</div>
 	)
 }
 
