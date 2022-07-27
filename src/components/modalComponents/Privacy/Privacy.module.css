@@ -1,0 +1,124 @@
+.privacy {
+
+}
+
+.title {
+	text-align: center;
+	font-size: 18px;
+	background-color: rgb(228, 77, 58);
+	color: #fff;
+	padding: 10px;
+}
+
+.body {
+	padding: 10px;
+}
+
+.block {
+	padding: 20px 0px;
+	border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.subtitle {
+  font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.desc {
+	max-width: 600px;
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+  line-height: 1.714;
+	margin-bottom: 10px;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+.customRadio {
+  font-size: 14px;
+  color: rgb(104, 104, 104);
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.customRadio > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.customRadio > span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.customRadio > span::before {
+	box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.customRadio > input:not(:disabled):not(:checked) + span:hover::before {
+  border-color: #b3d7ff;
+}
+
+.customRadio > input:not(:disabled):active + span::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.customRadio > input:focus + span::before {
+  box-shadow: 0 0 0 0.2rem rgba(228, 77, 58, 0.25);
+}
+
+.customRadio > input:focus:not(:checked) + span::before {
+  border-color: #80bdff;
+}
+
+.customRadio > input:checked + span::before {
+  border-color: rgb(228, 77, 58);
+  background-color: rgb(228, 77, 58);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.customRadio > input:disabled + span::before {
+  background-color: #e9ecef;
+}
+
+.buttons {
+	padding: 20px 0px;
+}
+
+.saveBtn {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+	border-radius: 3px;
+  background-color: rgb(228, 77, 58);
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.cancelBtn {
+  font-size: 16px;
+	border-radius: 3px;
+	background-color: #fff;
+	padding: 10px 15px;
+	cursor: pointer;
+	border: 1px solid rgb(229, 229, 229);
+}

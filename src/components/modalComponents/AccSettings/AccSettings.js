@@ -2,7 +2,10 @@ import { useState } from "react";
 import style from "./AccSettings.module.css";
 
 const AccSettings = () => {
-	const [toggle, setToggle] = useState(false);
+	const [notificationSound, setNotificationSound] = useState(false);
+	const [notificationEmail, setNotificationEmail] = useState(false);
+	const [chatSound, setChatSound] = useState(false);
+	
 	return (
 		<div className={style.accSettings}>
 			<h2 className={style.title}>Account settings</h2>
@@ -17,7 +20,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={toggle ? style.toggleOn : style.toggleOff} onClick={() => setToggle(!toggle)}>
+							<div className={notificationSound ? style.toggleOn : style.toggleOff} onClick={() => setNotificationSound(!notificationSound)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
@@ -35,7 +38,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={toggle ? style.toggleOn : style.toggleOff} onClick={() => setToggle(!toggle)}>
+							<div className={notificationEmail ? style.toggleOn : style.toggleOff} onClick={() => setNotificationEmail(!notificationEmail)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
@@ -53,7 +56,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={toggle ? style.toggleOn : style.toggleOff} onClick={() => setToggle(!toggle)}>
+							<div className={chatSound ? style.toggleOn : style.toggleOff} onClick={() => setChatSound(!chatSound)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
@@ -61,8 +64,9 @@ const AccSettings = () => {
 						</div>
 					</div>
 				</div>
-				<div className={style.saveSettings}>
-					<button className={style.saveBtn}>Save Setting</button>
+				<div className={style.buttons}>
+					<button className={style.saveBtn}>Save</button>
+					<button className={style.cancelBtn}>Cancel</button>
 				</div>
 			</div>
 		</div>
