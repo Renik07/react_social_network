@@ -2,9 +2,9 @@ import { useState } from "react";
 import style from "./AccSettings.module.css";
 
 const AccSettings = () => {
-	const [notificationSound, setNotificationSound] = useState(false);
-	const [notificationEmail, setNotificationEmail] = useState(false);
-	const [chatSound, setChatSound] = useState(false);
+	const [isNotificationSound, setNotificationSound] = useState(false);
+	const [isNotificationEmail, setNotificationEmail] = useState(false);
+	const [isChatSound, setChatSound] = useState(false);
 	
 	return (
 		<div className={style.accSettings}>
@@ -20,7 +20,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={notificationSound ? style.toggleOn : style.toggleOff} onClick={() => setNotificationSound(!notificationSound)}>
+							<div className={isNotificationSound ? style.toggleOn : style.toggleOff} onClick={() => setNotificationSound(!isNotificationSound)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
@@ -38,7 +38,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={notificationEmail ? style.toggleOn : style.toggleOff} onClick={() => setNotificationEmail(!notificationEmail)}>
+							<div className={isNotificationEmail ? style.toggleOn : style.toggleOff} onClick={() => setNotificationEmail(!isNotificationEmail)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
@@ -56,7 +56,7 @@ const AccSettings = () => {
 						<div className={style.button}>
 							<div className={style.buttonOn}>On</div>
 							<div className={style.buttonOff}>Off</div>
-							<div className={chatSound ? style.toggleOn : style.toggleOff} onClick={() => setChatSound(!chatSound)}>
+							<div className={isChatSound ? style.toggleOn : style.toggleOff} onClick={() => setChatSound(!isChatSound)}>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>
 								<span className={style.dash}>&#8212;</span>

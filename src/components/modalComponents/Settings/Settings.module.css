@@ -9,3 +9,60 @@
 	color: #fff;
 	padding: 10px;
 }
+
+.body {
+	padding: 30px 10px 10px;
+}
+
+.status {
+	display: grid;
+	grid-template: auto / repeat(auto-fit,minmax(200px, 1fr));
+	gap: 15px;
+	margin-bottom: 30px;
+}
+
+.block {
+	border: 1px solid rgb(229, 229, 229);
+  background-color: rgb(242, 242, 242);
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	border-bottom: 1px solid rgb(229, 229, 229);
+	padding-bottom: 10px;
+}
+
+.icon {
+	margin-right: 15px;
+}
+
+.titles {
+
+}
+
+.total {
+  font-size: 20px;
+  font-family: "Myriad Pro";
+  color: rgb(228, 77, 58);
+}
+
+.blockTitle {
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 13px;
+  color: rgb(104, 104, 104);
+  line-height: 1.692;
+	padding-top: 5px;
+}
+
+.subtitle {
+	margin-bottom: 50px;
+}
+
+.progressImage img {
+	max-width: 775px;
+	width: 100%;
+}
