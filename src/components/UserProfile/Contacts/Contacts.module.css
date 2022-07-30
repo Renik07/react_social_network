@@ -1,0 +1,36 @@
+.contacts {
+
+}
+
+.contact {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.icon {
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+}
+
+.link {
+	font-size: 14px;
+  color: rgb(81, 165, 251);
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.www_example_com {
+  font-size: 14px;
+  font-family: "Source Sans Pro";
+  color: rgb(81, 165, 251);
+  line-height: 1.429;
+  position: absolute;
+  left: 258.656px;
+  top: 680.346px;
+  z-index: 774;
+}

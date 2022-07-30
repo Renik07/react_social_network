@@ -12,7 +12,7 @@ const AboutUser = () => {
 				<Rating />
 			</div>
 			<div className={style.block}>
-				<h4 className={style.subtitle}>India</h4>
+				<h4 className={style.subtitle}>Saint-Petersburg</h4>
 				<div className={style.text}>SKS Nagar, Ludhiana 1 AM</div>
 			</div>
 			<div className={style.block}>

@@ -3,6 +3,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Messages.module.css";
 import MessagesForm from '../forms/MessagesForm/MessagesForm';
+import userAvatar from '../../assets/images/avatar.png';
 
 
 const Messages = (props) => {
@@ -15,7 +16,7 @@ const Messages = (props) => {
 		<div className={style.container}>
 			<div className={style.messagesTop}>Messages</div>
 			<div className={style.dialogsTop}>
-				<img className={style.img} src="./images/icon-user1.jpg" alt="avatar user 1" />
+				<img className={style.img} src={userAvatar} alt="" />
 				<div>
 					<div className={style.titleName}>
 						John Doe

@@ -1,6 +1,7 @@
 import Preloader from "../common/Preloader/Preloader";
 import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
+import Contacts from "./Contacts/Contacts";
 import style from "./UserProfile.module.css";
 import defaultUserPhoto from '../../assets/images/avatar.png';
 import chooseMainPhoto from '../../assets/images/choose-main-photo.png';
@@ -9,6 +10,7 @@ import Background from "../Background/Background";
 import Posts from "../Posts/Posts";
 import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople";
 import AboutUser from "./AboutUser/AboutUser";
+import { NavLink } from "react-router-dom";
 
 const UserProfile = (props) => {
 
@@ -46,12 +48,15 @@ const UserProfile = (props) => {
 							</div>
 							<div className={style.buttonsWrapper}>
 								<button className={style.buttonFollow}>Follow</button>
-								<button className={style.buttonMessage}>Message</button>
+								<NavLink to='/messages'>
+									<button className={style.buttonMessage}>Message</button>
+								</NavLink>
+							{/* 	<button className={style.buttonMessage}>Message</button> */}
 							</div>
 							<Follow />
+							<Contacts contacts={props.profile.contacts} />
 						</div>
 						<AboutUser />
-						{/* <SocialLinks contacts={props.profile.contacts} /> */}
 					</div>
 				</div>
 				<div className={style.column2}>

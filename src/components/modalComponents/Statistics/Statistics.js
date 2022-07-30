@@ -1,15 +1,15 @@
-import style from "./Settings.module.css";
-import sent from '../../../assets/images/Settings/sent.png';
-import totalIncome from '../../../assets/images/Settings/total-income.png';
-import totalProjects from '../../../assets/images/Settings/total-projects.png';
-import widthraw from '../../../assets/images/Settings/widthraw.png';
-import progressStatus from '../../../assets/images/Settings/progress-status.png';
+import style from "./Statistics.module.css";
+import sent from '../../../assets/images/Statistics/sent.png';
+import totalIncome from '../../../assets/images/Statistics/total-income.png';
+import totalProjects from '../../../assets/images/Statistics/total-projects.png';
+import widthraw from '../../../assets/images/Statistics/widthraw.png';
+import progressStatus from '../../../assets/images/Statistics/progress-status.png';
 
-const Settings = () => {
+const Statistics = () => {
 
 	return (
-		<div className={style.settings}>
-			<h2 className={style.title}>Settings</h2>
+		<div className={style.Statistics}>
+			<h2 className={style.title}>Statistics</h2>
 			<div className={style.body}>
 				<div className={style.status}>
 					<div className={style.block}>
@@ -70,4 +70,4 @@ const Settings = () => {
 	)
 }
 
-export default Settings;
+export default Statistics;

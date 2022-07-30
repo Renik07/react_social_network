@@ -3,11 +3,11 @@ import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 import ModalButton from "../common/Modal/ModalButton";
-import Settings from "../modalComponents/Settings/Settings";
 import AccSettings from "../modalComponents/AccSettings/AccSettings";
 import Privacy from "../modalComponents/Privacy/Privacy";
 import Faqs from "../modalComponents/Faqs/Faqs";
 import Deactivate from "../modalComponents/Deactivate/Deactivate";
+import Statistics from "../modalComponents/Statistics/Statistics";
 
 const Header = (props) => {
 	return(
@@ -25,7 +25,7 @@ const Header = (props) => {
 								<img className={style.avatar} src="" alt=""/>
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
-									<ModalButton component={<Settings />} nameButton="Settings" clsName="btnPopup"/>
+									<ModalButton component={<Statistics />} nameButton="Statistics" clsName="btnPopup"/>
 									<div className={style.popupInner}>
 									<ModalButton component={<AccSettings />} nameButton="Account Settings" clsName="btnPopup"/>
 									<ModalButton component={<Privacy />} nameButton="Privacy" clsName="btnPopup"/>
