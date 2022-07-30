@@ -7,7 +7,7 @@ import Settings from "../modalComponents/Settings/Settings";
 import AccSettings from "../modalComponents/AccSettings/AccSettings";
 import Privacy from "../modalComponents/Privacy/Privacy";
 import Faqs from "../modalComponents/Faqs/Faqs";
-import Terms from "../modalComponents/Terms/Terms";
+import Deactivate from "../modalComponents/Deactivate/Deactivate";
 
 const Header = (props) => {
 	return(
@@ -30,7 +30,7 @@ const Header = (props) => {
 									<ModalButton component={<AccSettings />} nameButton="Account Settings" clsName="btnPopup"/>
 									<ModalButton component={<Privacy />} nameButton="Privacy" clsName="btnPopup"/>
 									<ModalButton component={<Faqs />} nameButton="Faqs" clsName="btnPopup"/>
-									<ModalButton component={<Terms />} nameButton="Terms & Conditions" clsName="btnPopup"/>
+									<ModalButton component={<Deactivate />} nameButton="Deactivate Account" clsName="btnPopup"/>
 									</div>
 									<button className={style.btnLogout} onClick={() => props.logoutTC()}>Logout</button>
 								</div>

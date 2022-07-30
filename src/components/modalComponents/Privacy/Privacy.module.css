@@ -73,12 +73,12 @@
 }
 
 .customRadio > input:not(:disabled):not(:checked) + span:hover::before {
-  border-color: #b3d7ff;
+  border-color: #ffb3b3;
 }
 
 .customRadio > input:not(:disabled):active + span::before {
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
+  background-color: #ffb3b3;
+  border-color: #ffb3b3;
 }
 
 .customRadio > input:focus + span::before {
@@ -86,7 +86,7 @@
 }
 
 .customRadio > input:focus:not(:checked) + span::before {
-  border-color: #80bdff;
+  border-color: #ffa480;
 }
 
 .customRadio > input:checked + span::before {
