@@ -67,4 +67,13 @@ export const savePhotoThunkCreator = (file) => (dispatch) => {
 		})
 }
 
+export const saveFullnameThunkCreator = (profile) => (dispatch, getState) => {
+	const userId = getState().auth.id;
+
+	profileAPI.saveFullname(profile)
+		.then(response => {
+			dispatch(getUserProfileThunkCreator(userId));
+		})
+}
+
 export default userProfileReducer;

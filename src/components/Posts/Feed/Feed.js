@@ -1,6 +1,7 @@
 import style from "./Feed.module.css";
 import bookmark from "../../../assets/images/Feed/bookmark.png";
 import message from "../../../assets/images/Feed/message.png";
+import avatar from '../../../assets/images/avatar.png';
 
 const Feed = () => {
   return (
@@ -9,8 +10,7 @@ const Feed = () => {
         <div className={style.top}>
           <div className={style.header}>
             <div className={style.headerRow1}>
-              <div className={style.avatar}></div>
-              {/* <img className={style.avatar} src="" alt="" /> */}
+              <img className={style.avatar} src={avatar} alt="" />
               <div className={style.nameTime}>
                 <div className={style.name}>John Doe</div>
                 <div className={style.time}>3 min ago</div>

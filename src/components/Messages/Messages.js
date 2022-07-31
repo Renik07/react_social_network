@@ -10,7 +10,7 @@ const Messages = (props) => {
 
 	let dialogs = props.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
 
-	let messages = props.messages.map(m => <MessageItem key={m.id} message={m.message} />);
+	let messages = props.messages.map(m => <MessageItem key={m.id} message={m.message} isAuth={props.isAuth} />);
 
 	return (
 		<div className={style.container}>
@@ -30,6 +30,10 @@ const Messages = (props) => {
 				 { dialogs }
 			</div>
 			<div className={style.messages}>
+				<div className={style.messageUser}>Hello friend!</div>
+				<div className={style.messageUser}>How a u?</div>
+				<div className={style.messageUser}>I have a job for u</div>
+				<div className={style.messageUser}>You're interested?</div>
 				{ messages }
 			</div>
 			<MessagesForm {...props}/>

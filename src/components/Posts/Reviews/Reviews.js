@@ -1,5 +1,6 @@
 import style from "./Reviews.module.css";
 import star from "../../../assets/images/Reviews/star.png";
+import userPhoto from '../../../assets/images/avatar.png';
 
 const Reviews = () => {
   return (
@@ -9,8 +10,7 @@ const Reviews = () => {
 			</div>
       <div className={style.card}>
 				<div className={style.header}>
-					<div className={style.avatar}></div>
-					{/* <img className={style.avatar} src="" alt="" /> */}
+					<img className={style.avatar} src={userPhoto} alt="" />
 						<div className={style.user}>
 							<h4 className={style.name}>Rock William</h4>
 							<div className={style.categoryLocation}>
@@ -28,7 +28,7 @@ const Reviews = () => {
 							<img src={star} alt=''/>
 							<img src={star} alt=''/>
 						</div>
-						<div className={style.rating}>5.0 of 5 Reviews</div>
+						<div className={style.rating}>5.0 of 5</div>
 					</div>
 					<p className={style.desc}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus mi et porttitor ultrices
@@ -37,8 +37,7 @@ const Reviews = () => {
       </div>
       <div className={style.card}>
 				<div className={style.header}>
-					<div className={style.avatar}></div>
-					{/* <img className={style.avatar} src="" alt="" /> */}
+					<img className={style.avatar} src={userPhoto} alt="" />
 						<div className={style.user}>
 							<h4 className={style.name}>Jassica William</h4>
 							<div className={style.categoryLocation}>
@@ -56,7 +55,7 @@ const Reviews = () => {
 							<img src={star} alt=''/>
 							<img src={star} alt=''/>
 						</div>
-						<div className={style.rating}>5.0 of 5 Reviews</div>
+						<div className={style.rating}>5.0 of 5</div>
 					</div>
 					<p className={style.desc}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus mi et porttitor ultrices
@@ -65,8 +64,7 @@ const Reviews = () => {
       </div>
       <div className={style.card}>
 				<div className={style.header}>
-					<div className={style.avatar}></div>
-					{/* <img className={style.avatar} src="" alt="" /> */}
+					<img className={style.avatar} src={userPhoto} alt="" />
 						<div className={style.user}>
 							<h4 className={style.name}>Will William</h4>
 							<div className={style.categoryLocation}>
@@ -83,7 +81,7 @@ const Reviews = () => {
 							<img src={star} alt=''/>
 							<img src={star} alt=''/>
 						</div>
-						<div className={style.rating}>4.0 of 5 Reviews</div>
+						<div className={style.rating}>4.0 of 5</div>
 					</div>
 					<p className={style.desc}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus mi et porttitor ultrices

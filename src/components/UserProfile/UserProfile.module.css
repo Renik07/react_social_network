@@ -111,16 +111,124 @@
 .user {
 	padding-top: 30px;
 }
-.name {
-	font-size: 40px;
-	font-family: "Source Sans Pro";
-	color: rgb(0, 0, 0);
-	line-height: 1;
+
+.nameWrapper {
+	position: relative;
 	margin-bottom: 15px;
 }
+
+.name {
+	font-size: 40px;
+	display: inline-block;
+	padding: 5px;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+
+.inputName {
+	font-size: 40px;
+	display: inline-block;
+	padding: 5px;
+	outline: none;
+	border: none;
+	line-height: 1;
+}
+
+.editNameIcon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+}
+
+.editNameIconNone {
+	display: none;
+}
+
+.nameForm {
+	position: relative;
+}
+
+.submitNameButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	font-size: 25px;
+	line-height: 0.5;
+}
+
+.errorName {
+	position: absolute;
+	top: -20px;
+	color: rgb(178, 178, 178);
+	font-size: 14px;
+}
+
+/*  */
+
 .profession {
 	font-size: 18px;
 	font-family: "Source Sans Pro";
 	color: rgb(104, 104, 104);
 	line-height: 1.111;
+}
+
+.contact {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border-top: 1px solid rgb(229, 229, 229);
+}
+
+.icon {
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+}
+
+.link {
+	font-size: 14px;
+  color: rgb(81, 165, 251);
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ContactsData */
+
+.contactsData {
+	position: relative;
+}
+
+.iconButton {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.iconButton span {
+	cursor: pointer;
+	display: block;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: rgb(178, 178, 178);
+	margin-bottom: 1px;
+}
+
+.showButtonEdit {
+	position: absolute;
+	display: block;
+	right: 15px;
+	top: -15px;
+}
+
+.hideButtonEdit {
+	display: none;
 }

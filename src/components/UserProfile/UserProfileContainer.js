@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
-import { getUserProfileThunkCreator, getUserStatusThunkCreator, savePhotoThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
+import { getUserProfileThunkCreator, getUserStatusThunkCreator, saveFullnameThunkCreator, savePhotoThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
 
 class UserProfileContainer extends React.Component {
@@ -31,6 +31,7 @@ class UserProfileContainer extends React.Component {
 			status={this.props.status} 
 			updateStatus={this.props.updateUserStatusTC}
 			savePhoto={this.props.savePhotoTC}
+			saveFullname={this.props.saveFullnameTC}
 			isOwner={this.props.params.userId === this.props.authorizedId}
 		/>
 	}
@@ -52,4 +53,5 @@ export default connect(mapStateToProps, {
 	updateUserStatusTC: updateUserStatusThunkCreator,
 	getUserStatusTC: getUserStatusThunkCreator,
 	savePhotoTC: savePhotoThunkCreator,
+	saveFullnameTC: saveFullnameThunkCreator
 })(TakeParams);

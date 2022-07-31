@@ -2,6 +2,7 @@ import Links from "./Links/Links";
 import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
+import userPhoto from '../../assets/images/avatar.png';
 import ModalButton from "../common/Modal/ModalButton";
 import AccSettings from "../modalComponents/AccSettings/AccSettings";
 import Privacy from "../modalComponents/Privacy/Privacy";
@@ -10,6 +11,7 @@ import Deactivate from "../modalComponents/Deactivate/Deactivate";
 import Statistics from "../modalComponents/Statistics/Statistics";
 
 const Header = (props) => {
+	/* console.log(props.profile.photos.small); */
 	return(
 		<header className={style.header}>
 			<div className={style.container}>
@@ -22,7 +24,7 @@ const Header = (props) => {
 				<div className={style.wrapper}>
 					{ props.isAuth 
 						? <div className={style.wrapper}>
-								<img className={style.avatar} src="" alt=""/>
+								<img className={style.avatar} src={userPhoto} alt=""/>
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
 									<ModalButton component={<Statistics />} nameButton="Statistics" clsName="btnPopup"/>

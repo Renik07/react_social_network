@@ -9,6 +9,7 @@ const ProfileStatus = (props) => {
 	const activateEditMode = () => {
 		setEditMode(true);
 	}
+
 	const deactivateEditMode = () => {
 		setEditMode(false);
 		props.updateStatus(status);
@@ -26,10 +27,8 @@ const ProfileStatus = (props) => {
 		<div className={style.wrapperStatus}>
 			Status:
 			{editMode
-				? 
-					<input className={style.inputStatus} onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true} value={status} />
-				: 
-				<div className={style.status} onClick={activateEditMode} >{props.status || "no status"}</div>
+				? <input className={style.inputStatus} onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true} value={status} />
+				: <div className={props.isOwner ? style.statusMe : style.statusUser} onClick={props.isOwner ? activateEditMode : null} >{props.status || "no status"}</div>
 			}
 		</div>
 	)

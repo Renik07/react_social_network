@@ -12,10 +12,8 @@ let initialState = {
 		{id: "user7", name: "Name 7"}
 	],
 		messagesData: [
-		{id: 1, message: "message 1"},
-		{id: 2, message: "message 2"},
-		{id: 3, message: "message 3"},
-		{id: 4, message: "message 4"}
+		{id: 1, message: "Hi"},
+		{id: 2, message: "Yes, I am looking for a job right now"}
 	]
 }
 
@@ -23,7 +21,7 @@ const messagesReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_MESSAGE:
 			let newMsg = {
-				id: 5, message: action.newTextMessage
+				id: 3, message: action.newTextMessage
 			}
 			return {
 				...state,

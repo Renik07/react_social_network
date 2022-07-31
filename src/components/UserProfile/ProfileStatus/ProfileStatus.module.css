@@ -11,11 +11,18 @@
 	border: none;
 }
 
-.status {
+.statusMe {
 	font-size: 16px;
 	display: inline-block;
 	padding: 5px;
 	cursor: pointer;
   color: rgb(81, 165, 251);
   text-decoration: underline;
+}
+
+.statusUser {
+	font-size: 16px;
+	display: inline-block;
+	padding: 5px;
+	color: rgb(81, 165, 251);
 }

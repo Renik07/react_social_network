@@ -33,7 +33,10 @@ export const profileAPI = {
 		formData.append("image", file);
 
 		return instance.put(`profile/photo`, formData)
-	}
+	},
+	saveFullname(profile) {
+		return instance.put(`profile`, {...profile, aboutMe: "dasdad", lookingForAJobDescription: "asdasda"})
+	},
 }
 
 export const followAPI = {
