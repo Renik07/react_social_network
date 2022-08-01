@@ -12,20 +12,15 @@ import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople"
 import AboutUser from "./AboutUser/AboutUser";
 import { NavLink } from "react-router-dom";
 import website from '../../assets/images/Contacts/website.png';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import pencil from "../../assets/images/Info/pencil.png"
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const UserProfile = (props) => {
+
 	const [isEditMode, setIsEditMode] = useState(false);
-
 	const [isEditName, setIsEditName] = useState(false);
-	const [fullName, setFullName] = useState(props.fullName);
-
-	const onNameChange = (e) => {
-		setFullName(e.target.value);
-	}
 
 	const onSavePhoto = (e) => {
 		let file = e.target.files[0];
@@ -88,7 +83,6 @@ const UserProfile = (props) => {
 							{ isEditMode 
 								? <ContactsEditDataForm profile={props.profile} editMode={() => setIsEditMode(false)} isOwner={props.isOwner} /> 
 								: <ContactsData profile={props.profile} editMode={() => setIsEditMode(true)} isOwner={props.isOwner} /> }
-							{/* <Contacts contacts={props.profile.contacts} /> */}
 						</div>
 						<AboutUser />
 					</div>
@@ -102,10 +96,8 @@ const UserProfile = (props) => {
 														autoFocus={true} 
 														name="fullName" 
 														onChange={formik.handleChange} 
-														onBlur={formik.handleBlur}
 														type="text" 
-														value={fullName} 
-														/* value={formik.values.fullname}  */
+														value={formik.values.fullname} 
 														placeholder="What is your name?"
 														validationSchema={formik.validationSchema}
 										/>
