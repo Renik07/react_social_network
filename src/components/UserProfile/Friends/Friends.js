@@ -1,4 +1,5 @@
 import style from "./Friends.module.css";
+import userPhoto from '../../../assets/images/avatar.png';
 
 const Friends = () => {
 	return(
@@ -7,18 +8,18 @@ const Friends = () => {
 				<h3 className={style.friendsTitle}>Friends</h3>
 			</div>
 			<div className={style.friendsBody}>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
-				<div className={style.friend}></div>
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
+				<img className={style.friend} src={userPhoto} alt="" />
 			</div>
 		</div>
 	)

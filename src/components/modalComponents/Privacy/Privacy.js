@@ -57,6 +57,20 @@ const Privacy = () => {
 						</label>
 					</div>
 				</div>
+				<div className={style.block}>
+					<h3 className={style.subtitle}>Sharing your profile when you click apply</h3>
+					<p className={style.desc}>
+						Choose if you want to share your full profile with the job poster when you’re taken off LinkedIn after clicking apply
+					</p>
+					<div className={style.inputs}>
+						<label className={style.customRadio}><input type="radio" name="sharing" value="sharing-yes" id="sharing-yes" />
+							<span>Yes</span>
+						</label>
+						<label className={style.customRadio}><input type="radio" name="sharing" value="sharing-no" id="sharing-no" />
+							<span>No</span>
+						</label>
+					</div>
+				</div>
 				<div className={style.buttons}>
 					<button className={style.saveBtn}>Save</button>
 					<button className={style.cancelBtn}>Cancel</button>
