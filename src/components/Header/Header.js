@@ -9,6 +9,11 @@ import Privacy from "../modalComponents/Privacy/Privacy";
 import Password from "../modalComponents/Password/Password";
 import Deactivate from "../modalComponents/Deactivate/Deactivate";
 import Statistics from "../modalComponents/Statistics/Statistics";
+import statistics from '../../assets/images/Modal/statistics.png';
+import accSettings from '../../assets/images/Modal/acc-settings.png';
+import privacy from '../../assets/images/Modal/privacy.png';
+import password from '../../assets/images/Modal/password.png';
+import deactivate from '../../assets/images/Modal/deactivate.png';
 
 const Header = (props) => {
 	/* console.log(props.profile.photos.small); */
@@ -28,13 +33,13 @@ const Header = (props) => {
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
 									<div>
-										<ModalButton component={<Statistics />} nameButton="Statistics" clsName="btnPopup"/>
+										<ModalButton component={<Statistics />} nameButton="Statistics" clsName="btnPopup" img={statistics} />
 									</div>
 									<div className={style.popupInner}>
-										<ModalButton component={<AccSettings />} nameButton="Account Settings" clsName="btnPopup"/>
-										<ModalButton component={<Privacy />} nameButton="Privacy" clsName="btnPopup"/>
-										<ModalButton component={<Password />} nameButton="Change Password" clsName="btnPopup"/>
-										<ModalButton component={<Deactivate />} nameButton="Deactivate Account" clsName="btnPopup"/>
+										<ModalButton component={<AccSettings />} nameButton="Account Settings" clsName="btnPopup" img={accSettings} />
+										<ModalButton component={<Privacy />} nameButton="Privacy" clsName="btnPopup" img={privacy}/>
+										<ModalButton component={<Password />} nameButton="Change Password" clsName="btnPopup" img={password}/>
+										<ModalButton component={<Deactivate />} nameButton="Deactivate Account" clsName="btnPopup" img={deactivate}/>
 									</div>
 									<button className={style.btnLogout} onClick={() => props.logoutTC()}>Logout</button>
 								</div>

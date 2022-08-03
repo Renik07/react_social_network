@@ -71,3 +71,13 @@
 .modalContent {
 
 }
+
+.icon {
+	margin-right: 10px;
+}
+
+.btnPopup:hover .icon,
+.btnPopup:focus .icon,
+.btnPopup:active .icon {
+	filter: invert(100%) sepia(32%) saturate(2%) hue-rotate(255deg) brightness(101%) contrast(101%);
+}
