@@ -2,6 +2,8 @@ import style from "./Notification.module.css";
 import userAvatar from '../../assets/images/avatar.png';
 import Banner from "../Projects/Banner/Banner";
 import MostViewedPeople from "./MostViewedPeople/MostViewedPeople";
+import { compose } from "redux";
+import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 
 const Notification = () => {
 	return(
@@ -153,4 +155,6 @@ const Notification = () => {
 	)
 }
 
-export default Notification;
+export default compose(withAuthNavigate)(Notification);
+
+/* export default Notification; */

@@ -1,3 +1,5 @@
+import { compose } from "redux";
+import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 import Feed from "../Posts/Feed/Feed";
 import Banner from "../Projects/Banner/Banner";
 import Filters from "../Projects/Filters/Filters";
@@ -31,4 +33,7 @@ const Jobs = () => {
 	)
 }
 
-export default Jobs;
+export default compose(withAuthNavigate)(Jobs);
+
+/* export default Jobs; */
+

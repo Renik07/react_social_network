@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
 import { getUserProfileThunkCreator, getUserStatusThunkCreator, saveFullnameThunkCreator, savePhotoThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
+import { withAuthNavigate } from '../../hoc/withAuthNavigate';
+import { compose } from 'redux';
 
 class UserProfileContainer extends React.Component {
 
@@ -48,10 +50,21 @@ const TakeParams = (props) => {
 	return <UserProfileContainer {...props} params={useParams()} />
 }
 
-export default connect(mapStateToProps, {
+export default compose(
+	connect(mapStateToProps, {
+		getUserProfileTC: getUserProfileThunkCreator, 
+		updateUserStatusTC: updateUserStatusThunkCreator,
+		getUserStatusTC: getUserStatusThunkCreator,
+		savePhotoTC: savePhotoThunkCreator,
+		saveFullnameTC: saveFullnameThunkCreator
+	}),
+	withAuthNavigate
+)(TakeParams);
+
+/* export default connect(mapStateToProps, {
 	getUserProfileTC: getUserProfileThunkCreator, 
 	updateUserStatusTC: updateUserStatusThunkCreator,
 	getUserStatusTC: getUserStatusThunkCreator,
 	savePhotoTC: savePhotoThunkCreator,
 	saveFullnameTC: saveFullnameThunkCreator
-})(TakeParams);
+})(TakeParams); */
