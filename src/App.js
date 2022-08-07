@@ -14,6 +14,7 @@ import Companies from './components/Companies/Companies';
 import Projects from './components/Projects/Projects';
 import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
+import Company from './components/Company/Company';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -33,6 +34,7 @@ class App extends React.Component {
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/projects' element={<Projects />} />
 						<Route path='/companies' element={<Companies />} />
+						<Route path='/company' element={<Company />} />
 						<Route path='/jobs' element={<Jobs />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/notification' element={ <Notification />} />

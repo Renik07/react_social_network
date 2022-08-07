@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile';
-import { getUserProfileThunkCreator, getUserStatusThunkCreator, saveFullnameThunkCreator, savePhotoThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
+import { getUserProfileThunkCreator, getUserStatusThunkCreator, saveContactsDataThunkCreator, savePhotoThunkCreator, saveProfileDataThunkCreator, updateUserStatusThunkCreator } from '../../redux/userProfileReducer';
 import { useParams } from 'react-router-dom';
 import { withAuthNavigate } from '../../hoc/withAuthNavigate';
 import { compose } from 'redux';
@@ -33,8 +33,9 @@ class UserProfileContainer extends React.Component {
 			status={this.props.status} 
 			updateStatus={this.props.updateUserStatusTC}
 			savePhoto={this.props.savePhotoTC}
-			saveFullname={this.props.saveFullnameTC}
+			saveProfileData={this.props.saveProfileDataTC}
 			isOwner={this.props.params.userId === this.props.authorizedId}
+			saveContactsData={this.props.saveContactsDataTC}
 		/>
 	}
 }
@@ -56,7 +57,8 @@ export default compose(
 		updateUserStatusTC: updateUserStatusThunkCreator,
 		getUserStatusTC: getUserStatusThunkCreator,
 		savePhotoTC: savePhotoThunkCreator,
-		saveFullnameTC: saveFullnameThunkCreator
+		saveProfileDataTC: saveProfileDataThunkCreator,
+		saveContactsDataTC: saveContactsDataThunkCreator
 	}),
 	withAuthNavigate
 )(TakeParams);

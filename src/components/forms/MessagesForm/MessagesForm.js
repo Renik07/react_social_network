@@ -9,7 +9,7 @@ const MessagesForm = (props) => {
 		},
 		onSubmit: (values, {resetForm})=> {
 			props.addMessage(values.textMessage);
-			resetForm( {values: ''} );
+			resetForm();
 		},
 		validationSchema: Yup.object({
 			textMessage: Yup.string()
@@ -26,7 +26,7 @@ const MessagesForm = (props) => {
 				onBlur={formik.handleBlur}
 				className={style.input} 
 				type="text" 
-				value={formik.values.newTextMessage} 
+				value={formik.values.textMessage} 
 				placeholder="Type a message here"
 				validationSchema={formik.validationSchema} />
 				{formik.errors.textMessage &&  formik.touched.textMessage ? <p className={style.error}>{formik.errors.textMessage}</p> : null}

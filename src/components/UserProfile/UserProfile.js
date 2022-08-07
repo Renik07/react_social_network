@@ -1,7 +1,7 @@
 import Preloader from "../common/Preloader/Preloader";
 import Follow from "./Follow/Follow";
 import Friends from "./Friends/Friends";
-import Contacts from "./Contacts/Contacts";
+import { ContactsData, MyContacts } from "./Contacts/Contacts";
 import style from "./UserProfile.module.css";
 import defaultUserPhoto from '../../assets/images/avatar.png';
 import chooseMainPhoto from '../../assets/images/choose-main-photo.png';
@@ -11,16 +11,15 @@ import Posts from "../Posts/Posts";
 import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople";
 import AboutUser from "./AboutUser/AboutUser";
 import { NavLink } from "react-router-dom";
-import website from '../../assets/images/Contacts/website.png';
 import { useState } from "react";
 import pencil from "../../assets/images/Info/pencil.png"
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const UserProfile = (props) => {
-
-	const [isEditMode, setIsEditMode] = useState(false);
 	const [isEditName, setIsEditName] = useState(false);
+	const [editName, setEditName] = useState(props.profile.fullName || "");
+	const [aboutMe, setAboutMe] = useState(props.profile.aboutMe || "");
 
 	const onSavePhoto = (e) => {
 		let file = e.target.files[0];
@@ -29,20 +28,21 @@ const UserProfile = (props) => {
 
 	const formik = useFormik({
 		initialValues: {
-			fullName: "",
+			fullName: editName,
+			aboutMe: aboutMe,
+			lookingForAJobDescription: "description"
 		},
 
 		onSubmit: (values, {})=> {
-			props.saveFullname(values);
+			props.saveProfileData(values);
 			setIsEditName(false);
-			alert(JSON.stringify(values, null, 2));
+			/* alert(JSON.stringify(values, null, 2)); */
 		},
 
 		validationSchema: Yup.object({
 			fullName: Yup.string()
 				.min(5, 'Must be 5 characters or more')
 				.max(20, 'Must be 20 characters or less')
-				.required('Required')
 		})
 	});
 
@@ -80,9 +80,10 @@ const UserProfile = (props) => {
 								</NavLink>
 							</div>
 							<Follow />
-							{ isEditMode 
-								? <ContactsEditDataForm profile={props.profile} editMode={() => setIsEditMode(false)} isOwner={props.isOwner} /> 
-								: <ContactsData profile={props.profile} editMode={() => setIsEditMode(true)} isOwner={props.isOwner} /> }
+							{props.isOwner
+								? <MyContacts />
+								: <ContactsData profile={props.profile} />
+							}
 						</div>
 						<AboutUser />
 					</div>
@@ -96,21 +97,30 @@ const UserProfile = (props) => {
 														autoFocus={true} 
 														name="fullName" 
 														onChange={formik.handleChange} 
-														type="text" 
-														value={formik.values.fullname} 
-														placeholder="What is your name?"
+														type="text"
+														value={formik.values.fullName} 
+														placeholder={props.profile.fullName}
 														validationSchema={formik.validationSchema}
 										/>
-										<button className={style.submitNameButton} type="submit">+</button>
+										<input className={style.inputAboutMe} 
+														name="aboutMe" 
+														onChange={formik.handleChange} 
+														type="text"
+														value={formik.values.aboutMe} 
+														placeholder={props.profile.aboutMe}
+										/>
+										<button className={style.submitNameButton} type="submit">&#10003;</button>
 									</form>
 								: <div>
 										<div className={style.name}>{ props.profile.fullName }</div>
 										<img onClick={() => setIsEditName(true)} className={props.isOwner ? style.editNameIcon : style.editNameIconNone} src={pencil} alt="" />
+										<div className={style.aboutMeWrapper}>
+											<h3 className={style.aboutMe}>{ props.profile.aboutMe }</h3>
+										</div>
 									</div>
 							}
 							{formik.errors.fullName ? <p className={style.errorName}>{formik.errors.fullName}</p> : null}
 						</div>
-						<h3 className={style.profession}>Frontend developer (React developer)</h3>
 						<ProfileStatus status={props.status} updateStatus={props.updateStatus} isOwner={props.isOwner}/>
 						<Posts />
 					</div>
@@ -120,47 +130,6 @@ const UserProfile = (props) => {
 					<MostViewedPeople />
 				</div>
 			</div>
-		</div>
-	)
-}
-
-const ContactsData = (props) => {
-	const [showButton, setShowButton] = useState(false)
-	return(
-		<div className={style.contactsData}>
-			{ Object.keys(props.profile.contacts).map(key => props.profile.contacts[key] ? <Contact key={key} value={props.profile.contacts[key]} /> : null)}
-			<div onClick={() => setShowButton(!showButton)} className={style.iconButton}>
-				<span></span>
-				<span></span>
-				<span></span>
-				{props.isOwner && <button onClick={props.editMode} className={showButton ? style.showButtonEdit : style.hideButtonEdit}>Edit</button>}
-				{/* <button className={showButton ? style.showButtonEdit : style.hideButtonEdit}>Edit</button> */}
-			</div>
-		</div>
-	)
-}
-
-const ContactsEditDataForm = (props) => {
-	const [showButton, setShowButton] = useState(false)
-	return(
-		<div className={style.contactsData}>
-			{ Object.keys(props.profile.contacts).map(key => props.profile.contacts[key] ? <Contact key={key} value={props.profile.contacts[key]} /> : null)}
-			<div onClick={() => setShowButton(!showButton)} className={style.iconButton}>
-				<span></span>
-				<span></span>
-				<span></span>
-				{props.isOwner && <button onClick={() => {}} className={showButton ? style.showButtonEdit : style.hideButtonEdit}>Save</button>}
-				{/* <button className={showButton ? style.showButtonEdit : style.hideButtonEdit}>Edit</button> */}
-			</div>
-		</div>
-	)
-}
-
-const Contact = ({value}) => {
-	return(
-		<div className={style.contact}>
-			<img className={style.icon} src={website} alt="" />
-			<a className={style.link} target="_blank" rel="noreferrer" href={ value }>{ value }</a>
 		</div>
 	)
 }

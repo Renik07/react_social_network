@@ -114,18 +114,19 @@
 
 .nameWrapper {
 	position: relative;
-	margin-bottom: 15px;
 }
 
 .name {
 	font-size: 40px;
 	display: inline-block;
-	padding: 5px;
+	padding: 5px 0px;
 	line-height: 1;
 	margin-bottom: 5px;
 }
 
 .inputName {
+	max-width: 90%;
+	width: 100%;
 	font-size: 40px;
 	display: inline-block;
 	padding: 5px;
@@ -170,12 +171,27 @@
 }
 
 /*  */
+.aboutMeWrapper {
+	padding: 5px 0px;
+}
 
-.profession {
+.aboutMe {
+	display: inline-block;
 	font-size: 18px;
 	font-family: "Source Sans Pro";
 	color: rgb(104, 104, 104);
 	line-height: 1.111;
+}
+
+.inputAboutMe {
+	max-width: 90%;
+	width: 100%;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 16px;
+	display: inline-block;
+	padding: 5px;
+	outline: none;
+	border: none;
 }
 
 .contact {

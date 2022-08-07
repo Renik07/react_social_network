@@ -22,10 +22,10 @@
 }
 
 .react-tabs__tab:hover {
-	filter: brightness(1) invert(1);
+	filter: invert(46%) sepia(21%) saturate(6814%) hue-rotate(336deg) brightness(91%) contrast(97%);
 }
 
 .react-tabs__tab--selected {
 	outline: none;
-	filter: brightness(2) invert(1);
+	filter: invert(46%) sepia(21%) saturate(6814%) hue-rotate(336deg) brightness(91%) contrast(97%);
 }

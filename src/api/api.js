@@ -34,8 +34,13 @@ export const profileAPI = {
 
 		return instance.put(`profile/photo`, formData)
 	},
-	saveFullname(profile) {
-		return instance.put(`profile`, {...profile, aboutMe: "dasdad", lookingForAJobDescription: "asdasda"})
+	saveProfileData(profile) {
+		console.log(profile);
+		return instance.put(`profile`, profile)
+	},
+	saveContactsData(contacts) {
+		console.log(contacts);
+		return instance.put(`profile`, {...contacts, aboutMe: "about", fullName: "fullName", lookingForAJobDescription: "lookingForAJobDescription"})
 	},
 }
 

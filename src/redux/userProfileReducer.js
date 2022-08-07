@@ -6,7 +6,7 @@ const SET_MAIN_PHOTO = 'SET_MAIN_PHOTO';
 
 let initialState = {
 	status: "",
-	profile: null
+	profile: ""
 }
 
 const userProfileReducer = (state = initialState, action) => {
@@ -67,13 +67,22 @@ export const savePhotoThunkCreator = (file) => (dispatch) => {
 		})
 }
 
-export const saveFullnameThunkCreator = (profile) => (dispatch, getState) => {
+export const saveProfileDataThunkCreator = (profile) => async (dispatch, getState) => {
+	let response = await profileAPI.saveProfileData(profile)
 	const userId = getState().auth.id;
 
-	profileAPI.saveFullname(profile)
-		.then(response => {
-			dispatch(getUserProfileThunkCreator(userId));
-		})
+	if (response.data.resultCode === 0) {
+		dispatch(getUserProfileThunkCreator(userId));
+	}
+}
+
+export const saveContactsDataThunkCreator = (contacts) => async (dispatch, getState) => {
+	let response = await profileAPI.saveContactsData(contacts)
+	const userId = getState().auth.id;
+
+	if (response.data.resultCode === 0) {
+		dispatch(getUserProfileThunkCreator(userId));
+	}
 }
 
 export default userProfileReducer;
