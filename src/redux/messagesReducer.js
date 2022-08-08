@@ -9,7 +9,10 @@ let initialState = {
 		{id: "user4", name: "Name 4"},
 		{id: "user5", name: "Name 5"},
 		{id: "user6", name: "Name 6"},
-		{id: "user7", name: "Name 7"}
+		{id: "user7", name: "Name 7"},
+		{id: "user8", name: "Name 8"},
+		{id: "user9", name: "Name 9"},
+		{id: "user10", name: "Name 10"},
 	],
 		messagesData: [
 		{id: 1, message: "Hi"},

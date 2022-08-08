@@ -175,6 +175,10 @@
 	padding: 5px 0px;
 }
 
+.aboutMeWrapperNone {
+	display: none;
+}
+
 .aboutMe {
 	display: inline-block;
 	font-size: 18px;

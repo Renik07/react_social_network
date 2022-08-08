@@ -62,11 +62,3 @@ export default compose(
 	}),
 	withAuthNavigate
 )(TakeParams);
-
-/* export default connect(mapStateToProps, {
-	getUserProfileTC: getUserProfileThunkCreator, 
-	updateUserStatusTC: updateUserStatusThunkCreator,
-	getUserStatusTC: getUserStatusThunkCreator,
-	savePhotoTC: savePhotoThunkCreator,
-	saveFullnameTC: saveFullnameThunkCreator
-})(TakeParams); */

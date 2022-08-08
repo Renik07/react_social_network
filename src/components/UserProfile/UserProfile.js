@@ -114,7 +114,7 @@ const UserProfile = (props) => {
 								: <div>
 										<div className={style.name}>{ props.profile.fullName }</div>
 										<img onClick={() => setIsEditName(true)} className={props.isOwner ? style.editNameIcon : style.editNameIconNone} src={pencil} alt="" />
-										<div className={style.aboutMeWrapper}>
+										<div className={props.profile.aboutMe ? style.aboutMeWrapper : style.aboutMeWrapperNone}>
 											<h3 className={style.aboutMe}>{ props.profile.aboutMe }</h3>
 										</div>
 									</div>

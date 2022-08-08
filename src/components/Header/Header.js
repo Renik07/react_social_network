@@ -16,7 +16,6 @@ import password from '../../assets/images/Modal/password.png';
 import deactivate from '../../assets/images/Modal/deactivate.png';
 
 const Header = (props) => {
-	/* console.log(props.photo); */
 	return(
 		<header className={style.header}>
 			<div className={style.container}>
