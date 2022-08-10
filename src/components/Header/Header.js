@@ -28,7 +28,6 @@ const Header = (props) => {
 				<div className={style.wrapper}>
 					{ props.isAuth 
 						? <div className={style.wrapper}>
-								<img className={style.avatar} src={userPhoto} alt=""/>
 								<div className={style.name}>{props.login}&#9662;</div>
 								<div className={style.popup}>
 									<div>

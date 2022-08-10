@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
-import Background from "../Background/Background";
 import MostViewedPeople from "../Notification/MostViewedPeople/MostViewedPeople";
 import Posts from "../Posts/Posts";
 import AboutUser from "../UserProfile/AboutUser/AboutUser";
 import Follow from "../UserProfile/Follow/Follow";
 import Friends from "../UserProfile/Friends/Friends";
-import ProfileStatus from "../UserProfile/ProfileStatus/ProfileStatus";
-import style from "../UserProfile/UserProfile.module.css";
+import style from "./Company.module.css";
 import facebook from '../../assets/images/company-avatar.jpg';
 import facebookBg from '../../assets/images/company-banner.jpg';
 
@@ -14,9 +12,8 @@ const Company = (props) => {
 	return(
 		<div className={style.container}>
 			<div className={style.background}>
-				<img src={facebookBg} alt="bg"/>
+				<img width="1170" height="246" src={facebookBg} alt="bg"/>
 			</div>
-			{/* <Background /> */}
 			<div className={style.wrapper}>
 				<div className={style.column1}>
 					<div className={style.column1Wrapper}>
