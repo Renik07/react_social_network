@@ -15,6 +15,7 @@ import Projects from './components/Projects/Projects';
 import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Company from './components/Company/Company';
+import CookieConsent from "react-cookie-consent";
 
 class App extends React.Component {
 	componentDidMount() {
@@ -43,6 +44,12 @@ class App extends React.Component {
 					</Routes>
 				</div>
 				<Footer />
+				<CookieConsent 
+					buttonText="Agree & Close"
+					style={{ background: "#2b373bd7" }}
+					expires={90}>
+					🍪 By continuing to browse this site, you agree to the use of cookies to identify your session and to remember your login after you close the browser (authentication cookies).
+				</CookieConsent>
 			</div>
   	);
 	}
