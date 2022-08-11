@@ -120,23 +120,34 @@
 }
 
 .selectedPage {
-	font-size: 18px;
-	font-weight: bold;
+	display: inline-block;
+	min-width: 36px;
+  font-size: 14px;
+  color: #fff;
 	cursor: pointer;
-	color: rgb(228, 77, 58);
 	transition: all 0.3s;
-}
-.selectedPage:hover {
-	color: rgb(228, 77, 58);
+  border-radius: 3px;
+  background-color: rgb(228, 77, 58);
+	padding: 5px;
+	margin-right: 10px;
 }
 
 .buttonPage {
-	font-size: 18px;
-	color: rgb(95, 95, 95);
+	display: inline-block;
+	min-width: 36px;
+  font-size: 14px;
+  color: rgb(178, 178, 178);
 	cursor: pointer;
 	transition: all 0.3s;
+  border-radius: 3px;
+  background-color: rgb(229, 229, 229);
+	padding: 5px 10px;
+	margin-right: 10px;
 }
 
 .buttonPage:hover {
-	color: rgb(228, 77, 58);
+	color: #fff;
+  background-color: rgb(228, 77, 58);
 }
+
+
