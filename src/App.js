@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -16,6 +16,7 @@ import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Company from './components/Company/Company';
 import CookieConsent from "react-cookie-consent";
+import PageNotFound from './components/common/PageNotFound/PageNotFound';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -31,6 +32,7 @@ class App extends React.Component {
 				<HeaderContainer />
 				<div className={style.container}>
 					<Routes>
+						<Route path='/' element={<Navigate to="/profile" />} />
 						<Route path='/profile' element={<UserProfileContainer />} />
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
 						<Route path='/projects' element={<Projects />} />
@@ -41,6 +43,7 @@ class App extends React.Component {
 						<Route path='/notification' element={ <Notification />} />
 						<Route path='/users' element={ <UsersContainer />} />
 						<Route path='/login' element={ <Login />} />
+						<Route path="*" element={<PageNotFound />} />
 					</Routes>
 				</div>
 				<Footer />

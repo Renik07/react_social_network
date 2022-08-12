@@ -1,0 +1,60 @@
+.pageNotFound {
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	left: 50%;
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.containerBlock {
+	max-width: 1070px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.containerMap {
+	background: url('../../../assets/images/PageNotFound/map.png') center center / contain no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.block {
+	flex: 1;
+	display: grid;
+}
+
+.desc {
+	max-width: 570px;
+}
+
+.title {
+	margin-bottom: 25px;
+	text-transform: uppercase;
+}
+
+.text {
+  color: rgb(104, 104, 104);
+  line-height: 1.714;
+}
+
+.map {
+	display: grid;
+	flex: 1;
+	background: rgb(228, 77, 58);
+}
+
+.mapTitle {
+	font-size: 320px;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
