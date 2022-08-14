@@ -1,6 +1,6 @@
 import Links from "./Links/Links";
 import style from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 import ceiling from '../../assets/images/Header/ceiling.png';
 import ModalButton from "../common/Modal/ModalButton";
@@ -16,6 +16,8 @@ import password from '../../assets/images/Modal/password.png';
 import deactivate from '../../assets/images/Modal/deactivate.png';
 
 const Header = (props) => {
+	const location = useLocation().pathname;
+	const regExp = /^\/profile\/*\d*$/;
 	return(
 		<header className={style.header}>
 			<div className={style.container}>
@@ -23,7 +25,7 @@ const Header = (props) => {
 				<div className={style.inputWrapper}> 
 					<input className={style.input} type='text' placeholder='Search...' />
 					<button className={style.button}></button>
-					{/* <img className={style.ceiling} src={ceiling} width='61' height='61' alt="" /> */}
+					{location.match(regExp) && <img className={style.ceiling} src={ceiling} width='61' height='61' alt="" />}
 				</div>
 				<Links />
 				<div className={style.wrapper}>
