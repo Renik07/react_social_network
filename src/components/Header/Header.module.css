@@ -44,6 +44,14 @@
 		rgb(239, 239, 239);
 }
 
+.ceiling {
+	position: absolute;
+	bottom: -11px;
+	right: -63px;
+	width: 61px;
+	filter: invert(100%) sepia(0%) saturate(27%) hue-rotate(40deg) brightness(106%) contrast(108%);
+}
+
 .wrapper {
 	position: relative;
 	margin-left: 90px;

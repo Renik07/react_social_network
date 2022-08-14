@@ -2,7 +2,7 @@ import Links from "./Links/Links";
 import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
-import userPhoto from '../../assets/images/avatar.png';
+import ceiling from '../../assets/images/Header/ceiling.png';
 import ModalButton from "../common/Modal/ModalButton";
 import AccSettings from "../modalComponents/AccSettings/AccSettings";
 import Privacy from "../modalComponents/Privacy/Privacy";
@@ -23,6 +23,7 @@ const Header = (props) => {
 				<div className={style.inputWrapper}> 
 					<input className={style.input} type='text' placeholder='Search...' />
 					<button className={style.button}></button>
+					{/* <img className={style.ceiling} src={ceiling} width='61' height='61' alt="" /> */}
 				</div>
 				<Links />
 				<div className={style.wrapper}>
