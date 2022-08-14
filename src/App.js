@@ -51,7 +51,7 @@ class App extends React.Component {
 					buttonText="Agree & Close"
 					style={{ background: "#2b373bd7" }}
 					expires={90}>
-					🍪 By continuing to browse this site, you agree to the use of cookies to identify your session and to remember your login after you close the browser (authentication cookies).
+					🍪 By continuing to browse this site, you agree to the use of cookies to identify your session and to remember your login after you close the browser (authentication cookies). <b className={style.cookieText}>P.S. For login: email: free@samuraijs.com, password: free</b>
 				</CookieConsent>
 			</div>
   	);
