@@ -17,7 +17,7 @@ import deactivate from '../../assets/images/Modal/deactivate.png';
 
 const Header = (props) => {
 	const location = useLocation().pathname;
-	const regExp = /^\/profile\/*\d*$/;
+	const regExp = /^\/profile\/?\d*$/;
 	return(
 		<header className={style.header}>
 			<div className={style.container}>

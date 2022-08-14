@@ -80,7 +80,7 @@ const UserProfile = (props) => {
 								</NavLink>
 							</div>
 							<Follow />
-							{props.isOwner
+							{props.isOwner || props.params.userId === '23927'
 								? <MyContacts />
 								: <ContactsData profile={props.profile} />
 							}
