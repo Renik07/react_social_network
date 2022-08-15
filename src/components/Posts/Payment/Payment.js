@@ -29,8 +29,9 @@ const Payment = () => {
 
 		validationSchema: Yup.object({
 			cardNumber: Yup.string()
-				.max(20, 'Must be 16 characters')
-				.required('Required'),
+				.required('Required')
+				.min(16, 'Must be 16 characters')
+				.max(16, 'Must be 16 characters'),
 			firstName: Yup.string()
 				.required('Required'),
 			lastName: Yup.string()
@@ -66,21 +67,17 @@ const Payment = () => {
 					</div>
 					<form onSubmit={formik.handleSubmit}>
 						<div className={style.grid}>
-							<input name="cardNumber" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.cardNumber} validationSchema={formik.validationSchema} className={style.inputCard} type="number" placeholder='Card Number'/>
-							<input name="firstName" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.firstName} validationSchema={formik.validationSchema} className={style.inputCard} type="text" placeholder='First Name'/>
-							<input name="lastName" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastName} validationSchema={formik.validationSchema} className={style.inputCard} type="text" placeholder='Last Name'/>
-							<input name="mm" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mm} validationSchema={formik.validationSchema} className={style.inputCard} type="number" placeholder='MM'/>
-							<input name="yy" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.yy} validationSchema={formik.validationSchema} className={style.inputCard} type="number" placeholder='YY'/>
-							<input name="cvc" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.cvc} validationSchema={formik.validationSchema} className={style.inputCard} type="number" placeholder='CVC (Security Code)'/>
+							<input name="cardNumber" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.cardNumber} className={style.inputCard} type="number" placeholder='Card Number'/>
+							<input name="firstName" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.firstName} className={style.inputCard} type="text" placeholder='First Name'/>
+							<input name="lastName" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastName} className={style.inputCard} type="text" placeholder='Last Name'/>
+							<input name="mm" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mm} className={style.inputCard} type="number" placeholder='MM'/>
+							<input name="yy" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.yy} className={style.inputCard} type="number" placeholder='YY'/>
+							<input name="cvc" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.cvc} className={style.inputCard} type="number" placeholder='CVC (Security Code)'/>
 							{formik.errors.cvc &&  formik.touched.cvc ? <p className={style.error}>{formik.errors.cvc}</p> : null}
 						</div>
 						<button className={style.button} type="submit">Continue</button>
 					</form>
 				</div>
-
-
-
-
       </div>
     </div>
   );

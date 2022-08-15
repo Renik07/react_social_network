@@ -31,8 +31,8 @@ const Filters = () => {
 						<h4>Project Type</h4>
 						<div className={style.clear}>Clear</div>
 					</div>
-					<select name="Select a project type">
-						<option selected="selected" disabled>Select a project type</option>
+					<select defaultValue="default">
+						<option value="default" disabled>Select a project type</option>
 						<option>Option 1</option>
 						<option>Option 2</option>
 						<option>Option 3</option>
@@ -54,8 +54,8 @@ const Filters = () => {
 						<h4>Experience Level</h4>
 						<div className={style.clear}>Clear</div>
 					</div>
-					<select name="Select a experience level">
-						<option selected="selected" disabled>Select a experience level</option>
+					<select defaultValue="default">
+						<option value="default" disabled>Select a experience level</option>
 						<option>Option 1</option>
 						<option>Option 2</option>
 						<option>Option 3</option>
@@ -67,8 +67,8 @@ const Filters = () => {
 						<h4>Countries</h4>
 						<div className={style.clear}>Clear</div>
 					</div>
-					<select name="Select a country">
-						<option selected="selected" disabled>Select a country</option>
+					<select defaultValue="default">
+						<option value="default" disabled>Select a country</option>
 						<option>Option 1</option>
 						<option>Option 2</option>
 						<option>Option 3</option>

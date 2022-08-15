@@ -23,7 +23,7 @@ const Users = (props) => {
 			<div className={style.paginationWrapper}>
 				{ slicedPages.map(p => {
 					return (
-						<span className={props.currentPage === p ? style.selectedPage : style.buttonPage} onClick={ () => {props.onPageChanged(p)} }>{ p }  </span>
+						<span key={p} className={props.currentPage === p ? style.selectedPage : style.buttonPage} onClick={ () => {props.onPageChanged(p)} }>{ p }  </span>
 					)
 				}) }
 			</div>

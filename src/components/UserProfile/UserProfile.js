@@ -100,7 +100,6 @@ const UserProfile = (props) => {
 														type="text"
 														value={formik.values.fullName} 
 														placeholder={props.profile.fullName}
-														validationSchema={formik.validationSchema}
 										/>
 										<input className={style.inputAboutMe} 
 														name="aboutMe" 

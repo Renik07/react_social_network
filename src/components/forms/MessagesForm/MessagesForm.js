@@ -27,8 +27,7 @@ const MessagesForm = (props) => {
 				className={style.input} 
 				type="text" 
 				value={formik.values.textMessage} 
-				placeholder="Type a message here"
-				validationSchema={formik.validationSchema} />
+				placeholder="Type a message here" />
 				{formik.errors.textMessage &&  formik.touched.textMessage ? <p className={style.error}>{formik.errors.textMessage}</p> : null}
 			<button className={style.button} type="submit">Send</button>
 		</form>

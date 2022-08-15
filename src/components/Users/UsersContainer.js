@@ -1,31 +1,35 @@
 import { connect } from "react-redux"
 import { getUsersThunkCreator, getUsersPageNumberThunkCreator, followThunkCreator, unfollowThunkCreator } from "../../redux/usersReducer";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Users from './Users';
 import { getCurrentPage, getFollowingInProgress, getIsFetchingPreloader, getIsFollowingProgress, getPageSize, getTotalUsersCount, getUsers } from "../../redux/usersSelectors";
 
-const UsersContainer = (props) => {
-	const onPageChanged = pageNumber => {
-		props.getUsersPageNumberTC(pageNumber, props.pageSize)
+class UsersContainer extends React.Component {
+
+	componentDidMount() {
+		this.props.getUsersTC(this.props.currentPage, this.props.pageSize);
+
 	}
 
-	useEffect(() => {
-		props.getUsersTC(props.currentPage, props.pageSize);
-	}, []);
+	onPageChanged = pageNumber => {
+		this.props.getUsersPageNumberTC(pageNumber, this.props.pageSize)
+	}
 
-	return <Users 
-		totalUsersCount={props.totalUsersCount}
-		pageSize={props.pageSize}
-		currentPage={props.currentPage}
-		onPageChanged={onPageChanged}
-		users={props.users}
-		isFetchingPreloader={props.isFetchingPreloader}
-		isFollowingProgress={props.isFollowingProgress}
-		followingInProgress={props.followingInProgress}
-		followTC={props.followTC}
-		unfollowTC={props.unfollowTC}
-		isAuth={props.isAuth}
-	/>
+	render() {
+		return <Users 
+			totalUsersCount={this.props.totalUsersCount}
+			pageSize={this.props.pageSize}
+			currentPage={this.props.currentPage}
+			onPageChanged={this.onPageChanged}
+			users={this.props.users}
+			isFetchingPreloader={this.props.isFetchingPreloader}
+			isFollowingProgress={this.props.isFollowingProgress}
+			followingInProgress={this.props.followingInProgress}
+			followTC={this.props.followTC}
+			unfollowTC={this.props.unfollowTC}
+			isAuth={this.props.isAuth}
+		/>
+	}
 }
 
 let mapStateToProps = (state) => {
