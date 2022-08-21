@@ -11,12 +11,12 @@ import { initializeAppThunkCreator } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
 import Footer from './components/Footer/Footer';
 import Companies from './components/Companies/Companies';
-import Projects from './components/Projects/Projects';
 import Notification from './components/Notification/Notification';
 import Company from './components/Company/Company';
 import CookieConsent from "react-cookie-consent";
 import PageNotFound from './components/common/PageNotFound/PageNotFound';
 import JobsContainer from './components/Jobs/JobsContainer';
+import ProjectsContainer from './components/Projects/ProjectsContainer';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -35,7 +35,7 @@ class App extends React.Component {
 						<Route path='/' element={<Navigate to="/profile" />} />
 						<Route path='/profile' element={<UserProfileContainer />} />
 						<Route path='/profile/:userId' element={<UserProfileContainer />} />
-						<Route path='/projects' element={<Projects />} />
+						<Route path='/projects' element={<ProjectsContainer />} />
 						<Route path='/companies' element={<Companies />} />
 						<Route path='/company' element={<Company />} />
 						<Route path='/jobs' element={<JobsContainer />} />
