@@ -18,7 +18,7 @@ const Projects = () => {
 						<Filters />
 					</div>
 					<div className={style.column2}>
-						<Feed />
+						{/* <Feed /> */}
 					</div>
 					<div className={style.column3}>
 						<Banner />

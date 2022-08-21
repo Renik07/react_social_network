@@ -1,9 +1,9 @@
-import ProfileTabs from "./ProfileTabs/ProfileTabs";
+import ProfileTabsContainer from "./ProfileTabs/ProfileTabsContainer";
 
 const Posts = () => {
 	return (
 		<div>
-			<ProfileTabs />
+			<ProfileTabsContainer />
 		</div>
 	)
 }

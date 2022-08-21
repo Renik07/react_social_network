@@ -7,7 +7,12 @@ import MostViewed from "../Projects/MostViewed/MostViewed";
 import TopJobs from "../Projects/TopJobs/TopJobs";
 import style from "./Jobs.module.css";
 
-const Jobs = () => {
+const Jobs = (props) => {
+
+	const jobs = props.jobs.map((job, i) => {
+		return <Feed key={i} job={job} />
+	})
+
 	return(
 		<section className={style.projects}>
 			<div className={style.container}>
@@ -19,9 +24,7 @@ const Jobs = () => {
 					<div className={style.column1}>
 						<Filters />
 					</div>
-					<div className={style.column2}>
-						<Feed />
-					</div>
+					<div className={style.column2}>{ jobs }</div>
 					<div className={style.column3}>
 						<Banner />
 						<TopJobs />
@@ -34,6 +37,3 @@ const Jobs = () => {
 }
 
 export default compose(withAuthNavigate)(Jobs);
-
-/* export default Jobs; */
-

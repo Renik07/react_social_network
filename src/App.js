@@ -12,11 +12,11 @@ import Preloader from './components/common/Preloader/Preloader';
 import Footer from './components/Footer/Footer';
 import Companies from './components/Companies/Companies';
 import Projects from './components/Projects/Projects';
-import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Company from './components/Company/Company';
 import CookieConsent from "react-cookie-consent";
 import PageNotFound from './components/common/PageNotFound/PageNotFound';
+import JobsContainer from './components/Jobs/JobsContainer';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -38,7 +38,7 @@ class App extends React.Component {
 						<Route path='/projects' element={<Projects />} />
 						<Route path='/companies' element={<Companies />} />
 						<Route path='/company' element={<Company />} />
-						<Route path='/jobs' element={<Jobs />} />
+						<Route path='/jobs' element={<JobsContainer />} />
 						<Route path='/messages/*' element={ <MessagesContainer />} />
 						<Route path='/notification' element={ <Notification />} />
 						<Route path='/users' element={ <UsersContainer />} />

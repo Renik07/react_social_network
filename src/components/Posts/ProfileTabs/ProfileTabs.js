@@ -2,7 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './ProfileTabs.css';
 import feed from '../../../assets/images/ProfileTabs/icon-feed.png';
 import info from '../../../assets/images/ProfileTabs/icon-info.png';
-import jobs from '../../../assets/images/ProfileTabs/icon-jobs.png';
+import jobss from '../../../assets/images/ProfileTabs/icon-jobs.png';
 import bids from '../../../assets/images/ProfileTabs/icon-bids.png';
 import portfolio from '../../../assets/images/ProfileTabs/icon-portfolio.png';
 import reviews from '../../../assets/images/ProfileTabs/icon-reviews.png';
@@ -15,7 +15,10 @@ import Portfolio from '../Portfolio/Portfolio';
 import Reviews from '../Reviews/Reviews';
 import Payment from '../Payment/Payment';
 
-const ProfileTabs = () => {
+const ProfileTabs = (props) => {
+	const jobs = props.jobs.map((job, i) => {
+		return <Feed key={i} job={job} />
+	})
 	return (
 		<Tabs>
 			<TabList>
@@ -28,7 +31,7 @@ const ProfileTabs = () => {
 					<div>Info</div>					
 					</Tab>
 				<Tab>
-					<img src={jobs} alt="jobs" />
+					<img src={jobss} alt="jobs" />
 					<div>Jobs</div>					
 					</Tab>
 				<Tab>
@@ -50,7 +53,7 @@ const ProfileTabs = () => {
 			</TabList>
 
 			<TabPanel>
-				<Feed />
+				{ jobs }
 			</TabPanel>
 			<TabPanel>
 				<Info />
