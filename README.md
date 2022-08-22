@@ -52,3 +52,4 @@ My page - https://workwise.vercel.app/profile/23927
   - Адаптивная верстка
   - Обработка ошибок
   - Исправления, исправления, исправления
+  - TypeScript
